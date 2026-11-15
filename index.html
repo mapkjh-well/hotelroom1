@@ -42,22 +42,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* 가로 스크롤 커스텀 바 */
-    .table-scroll::-webkit-scrollbar {
-      height: 6px;
-    }
-    .table-scroll::-webkit-scrollbar-track {
-      background: #F1F5F9;
-      border-radius: 4px;
-    }
-    .table-scroll::-webkit-scrollbar-thumb {
-      background: #CBD5E1;
-      border-radius: 4px;
-    }
-    .table-scroll::-webkit-scrollbar-thumb:hover {
-      background: #94A3B8;
-    }
-
     /* A4 인쇄 및 PDF 저장 최적화 */
     @media print {
       @page {
@@ -89,30 +73,15 @@
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
-      .table-scroll {
-        overflow: visible !important;
-      }
     }
   </style>
 </head>
 <body class="min-h-screen flex flex-col">
 
-  <!-- 상단 빠른 조회 & 인쇄 유틸리티 바 (인쇄 시 숨김) -->
+  <!-- 상단 유틸리티 바: 우측 정렬 인쇄/PDF 버튼 배치 -->
   <header class="no-print sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
-      <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto">
-        <a href="#section-hotel" class="px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 hover:bg-slate-100 transition whitespace-nowrap">
-          01. 숙소 안내
-        </a>
-        <a href="#section-dining" class="px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 hover:bg-slate-100 transition whitespace-nowrap">
-          02. 지정 식당 안내
-        </a>
-        <a href="#section-notice" class="px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 hover:bg-slate-100 transition whitespace-nowrap">
-          03. 이용 유의사항
-        </a>
-      </div>
-
-      <button onclick="window.print()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white shadow-xs transition whitespace-nowrap shrink-0">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-end">
+      <button onclick="window.print()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white shadow-xs transition whitespace-nowrap">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
         인쇄 / PDF 저장
       </button>
@@ -126,66 +95,62 @@
     <!-- 히어로 배너 (상단 헤더 + 2열 균형 요약 카드) -->
     <!-- ========================================================= -->
     <section class="hero-gradient relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0a1931] via-[#0F2547] to-[#163a70] text-white p-6 sm:p-10 shadow-xl print-break-inside-avoid">
-      <!-- 은은한 기하학적 배경 장식 -->
+      <!-- 기하학적 배경 장식 -->
       <div class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-white/5 blur-2xl pointer-events-none"></div>
       <div class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-royal-500/20 blur-2xl pointer-events-none"></div>
       <div class="absolute top-8 right-12 w-36 h-36 border border-white/10 rounded-3xl rotate-12 pointer-events-none hidden sm:block"></div>
 
       <div class="relative z-10">
-        <!-- 상단 배지 및 인쇄 버튼 -->
+        <!-- 상단 배지 -->
         <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 text-xs sm:text-sm font-semibold tracking-wide badge-print">
             <span class="w-2 h-2 rounded-full bg-sky-300"></span>
             첨단소재·나노융합 혁신융합대학사업단
           </div>
-          <button onclick="window.print()" class="no-print inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white/15 hover:bg-white/25 border border-white/25 text-xs font-bold text-white transition">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
-            인쇄 / PDF 저장
-          </button>
         </div>
 
         <!-- 메인 타이틀 및 부제 -->
         <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-snug mb-2">
-          숙소 및 지정 식당 안내
+          숙소 및 방배정
         </h1>
         <p class="text-sky-100/90 text-sm sm:text-base font-medium mb-7">
-          광주 김대중컨벤션센터 행사 참가자 지정 숙소 위치, 이용 시간 및 조·중·석식 지정 식당 통합 안내
+          광주 김대중컨벤션센터 행사 참가자 지정 숙소 위치, 이용 안내 및 지정 식당 통합 안내
         </p>
 
         <!-- 배너 하단 요약 카드: 균형 잡힌 2열 그리드 -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 items-stretch">
-          <!-- 카드 1: 숙소 및 객실 안내 -->
+          <!-- 카드 1: 숙박 및 객실 배정 -->
           <div class="bg-white/12 backdrop-blur-md border border-white/20 rounded-2xl p-5 sm:p-6 flex flex-col justify-between h-full">
             <div class="flex items-center justify-between mb-3">
-              <span class="text-xs sm:text-sm font-bold text-sky-200 tracking-wide">지정 숙소 및 객실 안내</span>
+              <span class="text-xs sm:text-sm font-bold text-sky-200 tracking-wide">숙박 및 객실 배정</span>
               <span class="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center text-sky-200 shrink-0">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
               </span>
             </div>
             <div>
-              <div class="text-xl sm:text-2xl font-extrabold text-white tracking-tight mb-1.5">
-                에이치에비뉴호텔 (더블룸 · 1인실)
+              <div class="text-lg sm:text-2xl font-extrabold text-white tracking-tight mb-1.5">
+                에이치에비뉴호텔 (광주 상무점) · 더블룸 1인 1실 배정
               </div>
               <p class="text-xs sm:text-sm text-sky-100/95 font-medium">
-                도보 약 19분 (김대중컨벤션센터) · 체크인 15:00 / 체크아웃 11:00
+                체크인 시 프런트에서 본인 성함 말씀 후 즉시 객실 배정
               </p>
             </div>
           </div>
 
-          <!-- 카드 2: 지정 식당 운영 안내 -->
+          <!-- 카드 2: 행사장 거리 및 이용 시간 -->
           <div class="bg-white/12 backdrop-blur-md border border-white/20 rounded-2xl p-5 sm:p-6 flex flex-col justify-between h-full">
             <div class="flex items-center justify-between mb-3">
-              <span class="text-xs sm:text-sm font-bold text-sky-200 tracking-wide">지정 식당 운영 (조·중·석식)</span>
+              <span class="text-xs sm:text-sm font-bold text-sky-200 tracking-wide">행사장 거리 및 이용 시간</span>
               <span class="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center text-sky-200 shrink-0">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </span>
             </div>
             <div>
-              <div class="text-xl sm:text-2xl font-extrabold text-white tracking-tight mb-1.5">
-                조식 1곳 · 중식 3곳 · 석식 3곳
+              <div class="text-lg sm:text-2xl font-extrabold text-white tracking-tight mb-1.5">
+                김대중컨벤션센터 도보 약 19분 (차량 약 5분)
               </div>
               <p class="text-xs sm:text-sm text-sky-100/95 font-medium">
-                방문 시 '첨단소재(중앙대)' 말씀 후 명부 작성 및 지정 메뉴 택1
+                체크인 15:00 이후 / 체크아웃 11:00 이전
               </p>
             </div>
           </div>
@@ -206,28 +171,15 @@
       </div>
 
       <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden print-shadow-none">
-        <!-- 호텔 헤더 바 & 위치 액션 버튼 -->
+        <!-- 호텔 헤더 바 -->
         <div class="p-5 sm:p-6 border-b border-slate-200 flex flex-wrap items-center justify-between gap-3 bg-gradient-to-r from-royal-50 to-white">
           <div class="flex flex-wrap items-center gap-3">
             <span class="px-4 py-1.5 rounded-full bg-royal-600 text-white text-sm sm:text-base font-extrabold tracking-tight shadow-xs badge-print">
               에이치에비뉴호텔 (광주 상무점)
             </span>
             <span class="text-sm sm:text-base font-bold text-navy-900">
-              ※ 더블룸 - 1인실 배정
+              ※ 더블룸 - 1인 1실 배정
             </span>
-          </div>
-
-          <div class="no-print flex flex-wrap items-center gap-2">
-            <button onclick="copyAddress('전남광주 서구 시청로20번길 21-6')" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 transition">
-              <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-              주소 복사
-            </button>
-            <a href="https://map.naver.com/p/search/전남광주%20서구%20시청로20번길%2021-6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs font-bold bg-[#03C75A] hover:opacity-90 text-white transition">
-              네이버 지도 열기 ↗
-            </a>
-            <a href="https://map.kakao.com/?q=전남광주%20서구%20시청로20번길%2021-6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs font-bold bg-[#FEE500] hover:opacity-90 text-[#191919] transition">
-              카카오맵 열기 ↗
-            </a>
           </div>
         </div>
 
@@ -259,13 +211,25 @@
             </div>
           </div>
 
-          <!-- 도로명 주소 -->
+          <!-- 도로명 주소 + 지도/복사 버튼 -->
           <div class="grid grid-cols-12 items-center">
             <div class="col-span-4 sm:col-span-3 md:col-span-2 py-4 px-4 text-center font-bold text-slate-700 bg-slate-50/80 border-r border-slate-200 h-full flex items-center justify-center">
               도로명 주소
             </div>
-            <div class="col-span-8 sm:col-span-9 md:col-span-10 py-3.5 px-5">
-              <span id="hotelAddressText" class="font-bold text-slate-900">전남광주 서구 시청로20번길 21-6</span>
+            <div class="col-span-8 sm:col-span-9 md:col-span-10 py-3.5 px-5 flex flex-wrap items-center justify-between gap-3">
+              <span id="hotelAddressText" class="font-bold text-slate-900">광주 서구 시청로20번길 21-6</span>
+              <div class="no-print flex flex-wrap items-center gap-2">
+                <button onclick="copyAddress('광주 서구 시청로20번길 21-6')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 transition">
+                  <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                  주소 복사
+                </button>
+                <a href="https://map.naver.com/p/search/광주%20서구%20시청로20번길%2021-6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-[#03C75A] hover:opacity-90 text-white transition">
+                  네이버지도 ↗
+                </a>
+                <a href="https://map.kakao.com/?q=광주%20서구%20시청로20번길%2021-6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-[#FEE500] hover:opacity-90 text-[#191919] transition">
+                  카카오맵 ↗
+                </a>
+              </div>
             </div>
           </div>
 
@@ -285,10 +249,11 @@
             <div class="col-span-4 sm:col-span-3 md:col-span-2 py-4 px-4 text-center font-bold text-slate-700 bg-slate-50/80 border-r border-slate-200 h-full flex items-center justify-center">
               체크인 / 체크아웃
             </div>
-            <div class="col-span-8 sm:col-span-9 md:col-span-10 py-3.5 px-5 flex flex-wrap items-center gap-4 text-sm">
+            <div class="col-span-8 sm:col-span-9 md:col-span-10 py-3.5 px-5 flex flex-wrap items-center gap-x-5 gap-y-1.5 text-sm">
               <span class="inline-flex items-center gap-1.5 font-semibold text-slate-800">
                 <span class="w-2 h-2 rounded-full bg-royal-600"></span>
                 체크인 <strong class="text-navy-900">15:00 이후</strong>
+                <span class="text-royal-600 font-bold">(프런트에서 본인 성함 확인 후 객실 배정)</span>
               </span>
               <span class="inline-flex items-center gap-1.5 font-semibold text-slate-800">
                 <span class="w-2 h-2 rounded-full bg-amber-500"></span>
@@ -383,15 +348,15 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- 카드 1: 체크인 및 키 수령 안내 -->
+        <!-- 카드 1: 체크인 및 객실 배정 안내 -->
         <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm print-shadow-none flex flex-col justify-between">
           <div>
             <div class="flex items-center gap-2.5 mb-3">
               <span class="w-8 h-8 rounded-xl bg-royal-100 text-royal-600 flex items-center justify-center font-extrabold text-sm badge-print">1</span>
-              <h3 class="font-extrabold text-navy-900 text-sm sm:text-base">체크인 및 키 수령 안내</h3>
+              <h3 class="font-extrabold text-navy-900 text-sm sm:text-base">체크인 및 객실 배정 안내</h3>
             </div>
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              체크인은 <strong>15:00 이후</strong> 가능하며, 호텔 프런트 데스크에서 본인 성함 및 배정 호실을 확인하신 후 객실 키를 수령해 주시기 바랍니다.
+              호텔 프런트 데스크에서 체크인 시 <strong>본인 성함</strong>을 말씀해 주시면 사전 예약 명단 확인 후 즉시 객실을 배정해 드립니다. (전 인원 더블룸 1인 1실 배정 / 체크인 15:00 이후)
             </p>
           </div>
         </div>
@@ -404,7 +369,7 @@
               <h3 class="font-extrabold text-navy-900 text-sm sm:text-base">체크아웃 시간 준수</h3>
             </div>
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              체크아웃은 퇴실일 <strong>오전 11:00 이전</strong>입니다. 원활한 객실 운영을 위해 퇴실 시간을 반드시 준수하시고, 퇴실 시 프런트에 객실 키를 반납해 주세요.
+              퇴실 시간은 <strong>오전 11:00 이전</strong>입니다. 원활한 객실 정산을 위해 프런트에 객실 키를 반납해 주시기 바랍니다.
             </p>
           </div>
         </div>
@@ -417,7 +382,7 @@
               <h3 class="font-extrabold text-navy-900 text-sm sm:text-base">전 객실 1인실 운영 및 금연 안내</h3>
             </div>
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              전 객실 <strong>더블룸 1인 1실</strong>로 운영되며, 호텔 건물 전체 및 모든 객실 내에서는 <strong>절대 금연</strong>이므로 쾌적한 숙박 환경 유지에 협조 부탁드립니다.
+              쾌적한 투숙 환경을 위해 전 객실 <strong>1인 1실</strong>로 운영되며, 호텔 내 전 구역은 <strong>금연</strong>입니다.
             </p>
           </div>
         </div>
