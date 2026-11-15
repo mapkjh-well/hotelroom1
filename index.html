@@ -99,42 +99,28 @@
 
   <!-- 상단 빠른 조회 & 인쇄 유틸리티 바 (인쇄 시 숨김) -->
   <header class="no-print sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-end gap-3">
-      <div class="flex items-center gap-2 w-full md:w-auto flex-1 max-w-xl">
-        <div class="relative flex-1">
-          <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="성명, 소속, 직책, 호실(예: 606), 일정 검색..."
-            class="w-full pl-10 pr-8 py-2 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-600 focus:bg-white transition"
-          />
-          <button id="clearSearchBtn" onclick="resetFilters()" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-1" title="검색 초기화">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-          </button>
-        </div>
-
-        <button onclick="window.print()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white shadow-xs transition whitespace-nowrap">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
-          인쇄 / PDF 저장
-        </button>
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto">
+        <a href="#section-hotel" class="px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 hover:bg-slate-100 transition whitespace-nowrap">
+          01. 숙소 안내
+        </a>
+        <a href="#section-dining" class="px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 hover:bg-slate-100 transition whitespace-nowrap">
+          02. 지정 식당 안내
+        </a>
+        <a href="#section-notice" class="px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 hover:bg-slate-100 transition whitespace-nowrap">
+          03. 이용 유의사항
+        </a>
       </div>
-    </div>
 
-    <!-- 검색 필터 활성 상태 표시 바 -->
-    <div id="searchResultBanner" class="hidden bg-royal-50 border-t border-royal-100 px-4 py-2">
-      <div class="max-w-6xl mx-auto flex items-center justify-between text-xs sm:text-sm">
-        <div class="flex items-center gap-2 text-navy-900 font-semibold">
-          <span class="w-2 h-2 rounded-full bg-royal-600 animate-pulse"></span>
-          <span id="searchResultText">조회 결과</span>
-        </div>
-        <button onclick="resetFilters()" class="text-xs font-bold text-royal-600 hover:underline">전체 목록 초기화 ↺</button>
-      </div>
+      <button onclick="window.print()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white shadow-xs transition whitespace-nowrap shrink-0">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+        인쇄 / PDF 저장
+      </button>
     </div>
   </header>
 
   <!-- 메인 콘텐츠 -->
-  <main class="flex-1 max-w-6xl w-full mx-auto px-4 py-6 sm:py-8 space-y-8">
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 py-6 sm:py-8 space-y-10">
 
     <!-- ========================================================= -->
     <!-- 히어로 배너 (상단 헤더 + 2열 균형 요약 카드) -->
@@ -160,18 +146,18 @@
 
         <!-- 메인 타이틀 및 부제 -->
         <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-snug mb-2">
-          숙소 및 방배정
+          숙소 및 지정 식당 안내
         </h1>
         <p class="text-sky-100/90 text-sm sm:text-base font-medium mb-7">
-          광주 김대중컨벤션센터 행사 참가자 지정 숙소 위치, 투숙 일정 및 호실 배정 통합 안내
+          광주 김대중컨벤션센터 행사 참가자 지정 숙소 위치, 이용 시간 및 조·중·석식 지정 식당 통합 안내
         </p>
 
         <!-- 배너 하단 요약 카드: 균형 잡힌 2열 그리드 -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 items-stretch">
-          <!-- 카드 1: 숙소 및 객실 배정 -->
+          <!-- 카드 1: 숙소 및 객실 안내 -->
           <div class="bg-white/12 backdrop-blur-md border border-white/20 rounded-2xl p-5 sm:p-6 flex flex-col justify-between h-full">
             <div class="flex items-center justify-between mb-3">
-              <span class="text-xs sm:text-sm font-bold text-sky-200 tracking-wide">숙소 및 객실 배정</span>
+              <span class="text-xs sm:text-sm font-bold text-sky-200 tracking-wide">지정 숙소 및 객실 안내</span>
               <span class="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center text-sky-200 shrink-0">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
               </span>
@@ -181,25 +167,25 @@
                 에이치에비뉴호텔 (더블룸 · 1인실)
               </div>
               <p class="text-xs sm:text-sm text-sky-100/95 font-medium">
-                총 24명 전원 1인 1실 배정 완료
+                도보 약 19분 (김대중컨벤션센터) · 체크인 15:00 / 체크아웃 11:00
               </p>
             </div>
           </div>
 
-          <!-- 카드 2: 행사장 거리 및 이용 시간 -->
+          <!-- 카드 2: 지정 식당 운영 안내 -->
           <div class="bg-white/12 backdrop-blur-md border border-white/20 rounded-2xl p-5 sm:p-6 flex flex-col justify-between h-full">
             <div class="flex items-center justify-between mb-3">
-              <span class="text-xs sm:text-sm font-bold text-sky-200 tracking-wide">행사장 거리 및 이용 시간</span>
+              <span class="text-xs sm:text-sm font-bold text-sky-200 tracking-wide">지정 식당 운영 (조·중·석식)</span>
               <span class="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center text-sky-200 shrink-0">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
               </span>
             </div>
             <div>
               <div class="text-xl sm:text-2xl font-extrabold text-white tracking-tight mb-1.5">
-                도보 약 19분 (김대중컨벤션센터)
+                조식 1곳 · 중식 3곳 · 석식 3곳
               </div>
               <p class="text-xs sm:text-sm text-sky-100/95 font-medium">
-                체크인 15:00 · 체크아웃 11:00 · 11.15(일)~11.21(토)
+                방문 시 '첨단소재(중앙대)' 말씀 후 명부 작성 및 지정 메뉴 택1
               </p>
             </div>
           </div>
@@ -208,9 +194,9 @@
     </section>
 
     <!-- ========================================================= -->
-    <!-- 섹션 01. 숙소 위치 및 객실 상세 안내 (이미지 없음 · 순수 표 카드) -->
+    <!-- 섹션 01. 숙소 위치 및 객실 상세 안내 -->
     <!-- ========================================================= -->
-    <section class="space-y-4 print-break-inside-avoid">
+    <section id="section-hotel" class="space-y-4 scroll-mt-20 print-break-inside-avoid">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-2.5">
           <span class="w-1.5 h-6 rounded-full bg-royal-600"></span>
@@ -232,7 +218,7 @@
           </div>
 
           <div class="no-print flex flex-wrap items-center gap-2">
-            <button onclick="copyAddress()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 transition">
+            <button onclick="copyAddress('전남광주 서구 시청로20번길 21-6')" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 transition">
               <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
               주소 복사
             </button>
@@ -315,135 +301,82 @@
     </section>
 
     <!-- ========================================================= -->
-    <!-- 섹션 02. 전체 숙박 일정 및 방배정 명단 (총 24명) -->
+    <!-- 섹션 02. 식사 및 지정 식당 안내 (조·중·석) -->
     <!-- ========================================================= -->
-    <section class="space-y-4">
+    <section id="section-dining" class="space-y-5 scroll-mt-20">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
         <div class="flex items-center gap-2.5">
           <span class="w-1.5 h-6 rounded-full bg-royal-600"></span>
-          <h2 class="text-xl sm:text-2xl font-extrabold text-navy-900">02. 전체 숙박 일정 및 방배정 명단 (총 24명)</h2>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-navy-900">02. 식사 및 지정 식당 안내 (조·중·석)</h2>
         </div>
-
-        <!-- 범례 -->
-        <div class="flex flex-wrap items-center gap-3 text-xs font-semibold text-slate-600 bg-white px-3.5 py-2 rounded-xl border border-slate-200">
-          <span class="inline-flex items-center gap-1.5">
-            <span class="w-5 h-5 rounded-md bg-royal-600 text-white inline-flex items-center justify-center text-[10px] font-bold badge-print">●</span>
-            숙박 (투숙일)
-          </span>
-          <span class="inline-flex items-center gap-1.5">
-            <span class="px-1.5 h-5 rounded-md bg-amber-100 text-amber-800 border border-amber-300 inline-flex items-center justify-center text-[10px] font-extrabold badge-print">OUT</span>
-            체크아웃 (퇴실일)
-          </span>
-        </div>
+        <p class="text-xs sm:text-sm text-slate-500 font-medium">
+          ※ 모든 거리는 김대중컨벤션센터 기준입니다.
+        </p>
       </div>
 
-      <!-- 일자별 투숙 객실 요약 바 -->
-      <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm print-shadow-none print-break-inside-avoid">
-        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
-          <div class="flex items-center gap-2 text-xs sm:text-sm font-extrabold text-navy-900 shrink-0">
-            <span class="px-2.5 py-1 rounded-lg bg-royal-100 text-royal-600 text-xs font-bold badge-print">일자별 가동</span>
-            <span>투숙 객실 요약</span>
+      <!-- 지정 식당 공통 이용 방법 배너 -->
+      <div class="bg-gradient-to-r from-[#0F172A] to-[#1E3A8A] text-white rounded-2xl p-5 sm:p-7 shadow-lg border border-blue-800/50 print-break-inside-avoid">
+        <div class="flex items-center gap-2.5 mb-4">
+          <span class="px-2.5 py-1 rounded-lg bg-amber-400 text-slate-950 text-xs font-extrabold badge-print">필독</span>
+          <h3 class="text-base sm:text-lg font-bold">지정 식당 공통 이용 방법 (운영팀 일괄 결제)</h3>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-white/10 border border-white/15 rounded-xl p-4 flex items-start gap-3">
+            <div class="w-7 h-7 rounded-full bg-royal-600 text-white font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5 badge-print">1</div>
+            <div>
+              <div class="font-bold text-sm text-blue-200 mb-1">소속 말씀하기</div>
+              <p class="text-xs text-slate-100 leading-relaxed">
+                식당 방문 후 직원에게 <strong class="text-amber-300">'첨단소재(중앙대)'</strong>라고 말씀해주세요.
+              </p>
+            </div>
           </div>
-          <div class="grid grid-cols-4 sm:grid-cols-7 gap-2 flex-1">
-            <div class="bg-slate-50 border border-slate-200/80 rounded-xl px-2.5 py-2 text-center">
-              <div class="text-[11px] font-bold text-slate-500">15(일)</div>
-              <div class="text-xs sm:text-sm font-extrabold text-navy-900 mt-0.5">2실</div>
+          <div class="bg-white/10 border border-white/15 rounded-xl p-4 flex items-start gap-3">
+            <div class="w-7 h-7 rounded-full bg-royal-600 text-white font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5 badge-print">2</div>
+            <div>
+              <div class="font-bold text-sm text-blue-200 mb-1">방문 명부 작성</div>
+              <p class="text-xs text-slate-100 leading-relaxed">
+                비치된 방문 명부에 <strong>본인의 소속(대학)과 성명</strong>을 정확히 기재합니다.
+              </p>
             </div>
-            <div class="bg-slate-50 border border-slate-200/80 rounded-xl px-2.5 py-2 text-center">
-              <div class="text-[11px] font-bold text-slate-500">16(월)</div>
-              <div class="text-xs sm:text-sm font-extrabold text-navy-900 mt-0.5">2실</div>
-            </div>
-            <div class="bg-slate-50 border border-slate-200/80 rounded-xl px-2.5 py-2 text-center">
-              <div class="text-[11px] font-bold text-slate-500">17(화)</div>
-              <div class="text-xs sm:text-sm font-extrabold text-navy-900 mt-0.5">3실</div>
-            </div>
-            <div class="bg-royal-50 border border-royal-200 rounded-xl px-2.5 py-2 text-center badge-print">
-              <div class="text-[11px] font-bold text-royal-600">18(수)</div>
-              <div class="text-xs sm:text-sm font-extrabold text-navy-900 mt-0.5">18실</div>
-            </div>
-            <div class="bg-royal-50 border border-royal-200 rounded-xl px-2.5 py-2 text-center badge-print">
-              <div class="text-[11px] font-bold text-royal-600">19(목)</div>
-              <div class="text-xs sm:text-sm font-extrabold text-navy-900 mt-0.5">19실</div>
-            </div>
-            <div class="bg-slate-50 border border-slate-200/80 rounded-xl px-2.5 py-2 text-center">
-              <div class="text-[11px] font-bold text-slate-500">20(금)</div>
-              <div class="text-xs sm:text-sm font-extrabold text-navy-900 mt-0.5">4실</div>
-            </div>
-            <div class="bg-amber-50/70 border border-amber-200/80 rounded-xl px-2.5 py-2 text-center col-span-2 sm:col-span-1 badge-print">
-              <div class="text-[11px] font-bold text-amber-700">21(토)</div>
-              <div class="text-xs font-extrabold text-amber-800 mt-0.5">0실(전원 퇴실)</div>
+          </div>
+          <div class="bg-white/10 border border-white/15 rounded-xl p-4 flex items-start gap-3">
+            <div class="w-7 h-7 rounded-full bg-royal-600 text-white font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5 badge-print">3</div>
+            <div>
+              <div class="font-bold text-sm text-blue-200 mb-1">지정 메뉴 택1 주문</div>
+              <p class="text-xs text-slate-100 leading-relaxed">
+                식당별 지정된 <strong>메뉴 2종 중 1가지를 선택</strong>하여 주문합니다.
+              </p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 빠른 필터 버튼 그룹 -->
+      <!-- 조·중·석식 필터 탭 -->
       <div class="no-print flex flex-wrap items-center gap-2">
-        <span class="text-xs font-bold text-slate-500 mr-1">빠른 조건 필터:</span>
-        <button onclick="setQuickFilter('ALL')" data-filter="ALL" class="filter-btn active px-3 py-1.5 rounded-lg text-xs font-bold bg-navy-900 text-white transition">전체 (24명)</button>
-        <button onclick="setQuickFilter('LONG')" data-filter="LONG" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition">장기투숙 (3박 이상)</button>
-        <button onclick="setQuickFilter('IN18')" data-filter="IN18" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition">11.18(수) 입실</button>
-        <button onclick="setQuickFilter('IN19')" data-filter="IN19" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition">11.19(목) 입실</button>
-        <button onclick="resetFilters()" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 border border-slate-300 hover:bg-slate-200 transition">초기화 ↺</button>
+        <button onclick="filterRestaurants('all')" data-meal="all" class="meal-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-bold bg-royal-600 text-white shadow-sm transition-all">
+          전체 식당 (7곳)
+        </button>
+        <button onclick="filterRestaurants('breakfast')" data-meal="breakfast" class="meal-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition-all">
+          ☀️ 조식 (1곳)
+        </button>
+        <button onclick="filterRestaurants('lunch')" data-meal="lunch" class="meal-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition-all">
+          🌤️ 중식 (3곳)
+        </button>
+        <button onclick="filterRestaurants('dinner')" data-meal="dinner" class="meal-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition-all">
+          🌙 석식 (3곳)
+        </button>
       </div>
 
-      <!-- 전체 24명 반응형 숙박 일정 매트릭스 표 -->
-      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden print-shadow-none">
-        <div class="table-scroll overflow-x-auto">
-          <table class="w-full text-left border-collapse min-w-[880px]">
-            <thead>
-              <tr class="bg-navy-900 text-white text-xs sm:text-sm font-bold text-center">
-                <th class="py-3.5 px-2.5 w-11 border-r border-white/10">No.</th>
-                <th class="py-3.5 px-3 text-left border-r border-white/10 min-w-[84px]">성명</th>
-                <th class="py-3.5 px-3 text-left border-r border-white/10 min-w-[230px]">소속 / 직책</th>
-                <th class="py-3.5 px-3 border-r border-white/10 min-w-[90px]">호실</th>
-                <th class="py-3.5 px-2.5 border-r border-white/15 min-w-[88px]">숙박일정</th>
-                <th class="py-3.5 px-1.5 w-14 border-r border-white/10 text-sky-200">15(일)</th>
-                <th class="py-3.5 px-1.5 w-14 border-r border-white/10">16(월)</th>
-                <th class="py-3.5 px-1.5 w-14 border-r border-white/10">17(화)</th>
-                <th class="py-3.5 px-1.5 w-14 border-r border-white/10">18(수)</th>
-                <th class="py-3.5 px-1.5 w-14 border-r border-white/10">19(목)</th>
-                <th class="py-3.5 px-1.5 w-14 border-r border-white/10">20(금)</th>
-                <th class="py-3.5 px-1.5 w-14 text-amber-200">21(토)</th>
-              </tr>
-            </thead>
-            <tbody id="scheduleTableBody" class="divide-y divide-slate-200 text-xs sm:text-sm">
-              <!-- JavaScript로 24명 데이터 렌더링 -->
-            </tbody>
-          </table>
-        </div>
-
-        <!-- 하단 범례 바 -->
-        <div class="bg-slate-50/90 border-t border-slate-200 px-4 py-3 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-600">
-          <div class="flex flex-wrap items-center gap-4 font-semibold">
-            <span class="inline-flex items-center gap-1.5">
-              <span class="w-5 h-5 rounded-md bg-royal-600 text-white inline-flex items-center justify-center text-[10px] font-bold badge-print">●</span>
-              숙박 (투숙일)
-            </span>
-            <span class="inline-flex items-center gap-1.5">
-              <span class="px-1.5 h-5 rounded-md bg-amber-100 text-amber-800 border border-amber-300 inline-flex items-center justify-center text-[10px] font-extrabold badge-print">OUT</span>
-              체크아웃 (퇴실일)
-            </span>
-          </div>
-          <span class="text-[11px] text-slate-500 font-medium">※ 전 객실 에이치에비뉴호텔 더블룸 1인실 배정</span>
-        </div>
-
-        <!-- 검색 결과 없음 안내 -->
-        <div id="emptyStateBox" class="hidden py-12 px-4 text-center">
-          <div class="w-12 h-12 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center mx-auto mb-3">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          </div>
-          <p class="text-sm font-bold text-slate-700 mb-1">일치하는 참가자 또는 객실 정보가 없습니다.</p>
-          <p class="text-xs text-slate-500 mb-4">성명, 소속, 직책, 호실 번호 또는 일정을 다시 확인해 주세요.</p>
-          <button onclick="resetFilters()" class="px-4 py-2 rounded-xl bg-royal-600 text-white text-xs font-bold hover:bg-royal-500 transition">전체 24명 목록 보기</button>
-        </div>
+      <!-- 지정 식당 7곳 카드 그리드 -->
+      <div id="restaurant-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- JavaScript로 7개 지정 식당 렌더링 -->
       </div>
     </section>
 
     <!-- ========================================================= -->
     <!-- 섹션 03. 숙소 이용 안내 및 유의사항 -->
     <!-- ========================================================= -->
-    <section class="space-y-4 print-break-inside-avoid">
+    <section id="section-notice" class="space-y-4 scroll-mt-20 print-break-inside-avoid">
       <div class="flex items-center gap-2.5">
         <span class="w-1.5 h-6 rounded-full bg-royal-600"></span>
         <h2 class="text-xl sm:text-2xl font-extrabold text-navy-900">03. 숙소 이용 안내 및 유의사항</h2>
@@ -507,174 +440,177 @@
 
   <!-- 데이터 및 인터랙션 스크립트 -->
   <script>
-    // 24명 교직원 숙박 및 방배정 데이터
-    // days 인덱스: 0=15(일), 1=16(월), 2=17(화), 3=18(수), 4=19(목), 5=20(금), 6=21(토)
-    // 상태값: 1 = 숙박(●), 2 = 체크아웃(OUT), 0 = 해당없음(·)
-    const accommodationData = [
-      { no: 1,  name: '황재은', org: '중앙대학교 · 연구교수', room: '606호', duration: '6박 7일', shortDate: '11.15~21', days: [1, 1, 1, 1, 1, 1, 2] },
-      { no: 2,  name: '김주영', org: '중앙대학교 · 연구원', room: '607호', duration: '6박 7일', shortDate: '11.15~21', days: [1, 1, 1, 1, 1, 1, 2] },
-      { no: 3,  name: '목문경', org: '중앙대학교 · 책임연구원', room: '604호', duration: '3박 4일', shortDate: '11.18~21', days: [0, 0, 0, 1, 1, 1, 2] },
-      { no: 4,  name: '이성민', org: '중앙대학교 · 연구원', room: '511호', duration: '3박 4일', shortDate: '11.18~21', days: [0, 0, 0, 1, 1, 1, 2] },
-      { no: 5,  name: '권수정', org: '중앙대학교 · 연구원', room: '608호', duration: '2박 3일', shortDate: '11.17~19', days: [0, 0, 1, 1, 2, 0, 0] },
-      { no: 6,  name: '나은상', org: '중앙대학교 · 연구교수', room: '510호', duration: '2박 3일', shortDate: '11.18~20', days: [0, 0, 0, 1, 1, 2, 0] },
-      { no: 7,  name: '박수지', org: '중앙대학교 · 연구원', room: '509호', duration: '2박 3일', shortDate: '11.18~20', days: [0, 0, 0, 1, 1, 2, 0] },
-      { no: 8,  name: '김혜진', org: '중앙대학교 · 연구원', room: '508호', duration: '2박 3일', shortDate: '11.18~20', days: [0, 0, 0, 1, 1, 2, 0] },
-      { no: 9,  name: '안하은', org: '한남대학교 첨단소재나노융합혁신융합사업단', room: '505호', duration: '2박 3일', shortDate: '11.18~20', days: [0, 0, 0, 1, 1, 2, 0] },
-      { no: 10, name: '정경아', org: '한남대학교', room: '205호', duration: '2박 3일', shortDate: '11.18~20', days: [0, 0, 0, 1, 1, 2, 0] },
-      { no: 11, name: '김윤',   org: '한남대학교 첨단소재나노융합혁신융합대학사업단', room: '201호', duration: '2박 3일', shortDate: '11.18~20', days: [0, 0, 0, 1, 1, 2, 0] },
-      { no: 12, name: '정원희', org: '인하공업전문대학', room: '204호', duration: '2박 3일', shortDate: '11.18~20', days: [0, 0, 0, 1, 1, 2, 0] },
-      { no: 13, name: '이다현', org: '인하공업전문대학', room: '203호', duration: '2박 3일', shortDate: '11.18~20', days: [0, 0, 0, 1, 1, 2, 0] },
-      { no: 14, name: '김가륜', org: '국립금오공과대학교', room: '202호', duration: '2박 3일', shortDate: '11.18~20', days: [0, 0, 0, 1, 1, 2, 0] },
-      { no: 15, name: '유준상', org: '중앙대학교 · 연구원', room: '503호', duration: '1박 2일', shortDate: '11.18~19', days: [0, 0, 0, 1, 2, 0, 0] },
-      { no: 16, name: '박다현', org: '중앙대학교 · 연구원', room: '207호', duration: '1박 2일', shortDate: '11.18~19', days: [0, 0, 0, 1, 2, 0, 0] },
-      { no: 17, name: '김태동', org: '한남대학교', room: '208호', duration: '1박 2일', shortDate: '11.18~19', days: [0, 0, 0, 1, 2, 0, 0] },
-      { no: 18, name: '김효정', org: '-', room: '209호', duration: '1박 2일', shortDate: '11.18~19', days: [0, 0, 0, 1, 2, 0, 0] },
-      { no: 19, name: '김석민', org: '중앙대학교 · 부단장', room: '504호', duration: '1박 2일', shortDate: '11.19~20', days: [0, 0, 0, 0, 1, 2, 0] },
-      { no: 20, name: '안솔',   org: '중앙대학교 · 센터장', room: '605호', duration: '1박 2일', shortDate: '11.19~20', days: [0, 0, 0, 0, 1, 2, 0] },
-      { no: 21, name: '김영규', org: '중앙대학교 · 연구교수', room: '609호', duration: '1박 2일', shortDate: '11.19~20', days: [0, 0, 0, 0, 1, 2, 0] },
-      { no: 22, name: '김도은', org: '중앙대학교 · 연구원', room: '610호', duration: '1박 2일', shortDate: '11.19~20', days: [0, 0, 0, 0, 1, 2, 0] },
-      { no: 23, name: '박종범', org: '제일엔지니어링 · 전무', room: '611호', duration: '1박 2일', shortDate: '11.19~20', days: [0, 0, 0, 0, 1, 2, 0] },
-      { no: 24, name: '권미혜', org: '-', room: '608호', duration: '1박 2일', shortDate: '11.19~20', days: [0, 0, 0, 0, 1, 2, 0] }
+    // 지정 식당 7곳 데이터 (조식 1곳 · 중식 3곳 · 석식 3곳)
+    const restaurantsData = [
+      {
+        id: 1,
+        mealType: 'breakfast',
+        mealLabel: '조식',
+        badgeColor: 'bg-amber-100 text-amber-800 border-amber-200',
+        name: '브로샌드위치',
+        menuA: '햄치즈에그 샌드위치',
+        menuB: '크랜베리 닭가슴살 샌드위치',
+        distance: '도보 15분 (985m)',
+        address: '광주 서구 치평로 2, 1층 104호',
+        phone: '0507-1498-2577',
+        point: '샌드위치 2종 중 택1 주문 가능'
+      },
+      {
+        id: 2,
+        mealType: 'lunch',
+        mealLabel: '중식',
+        badgeColor: 'bg-orange-100 text-orange-800 border-orange-200',
+        name: '맛과향',
+        menuA: '비빔밥',
+        menuB: '제육볶음',
+        distance: '도보 9분 (634m)',
+        address: '광주 서구 상무공원로 33, 상가동 1층 110~111호',
+        phone: '062-372-9100',
+        point: '제육볶음은 2인 이상 주문 가능 / 점심시간 혼잡 시 시간 분산 방문'
+      },
+      {
+        id: 3,
+        mealType: 'lunch',
+        mealLabel: '중식',
+        badgeColor: 'bg-orange-100 text-orange-800 border-orange-200',
+        name: '일담',
+        menuA: '수제 생 등심 돈카츠',
+        menuB: '규동',
+        distance: '도보 8분 (507m)',
+        address: '광주 서구 상무화원로17번길 1, 1층',
+        phone: '062-381-3788',
+        point: '일요일 정기휴무 (행사 기간 정상 영업)'
+      },
+      {
+        id: 4,
+        mealType: 'lunch',
+        mealLabel: '중식',
+        badgeColor: 'bg-orange-100 text-orange-800 border-orange-200',
+        name: '짬뽕회관 상무점',
+        menuA: '대박짬뽕',
+        menuB: '순두부짬뽕밥',
+        distance: '도보 10분 (666m)',
+        address: '광주 서구 상무공원로 1, 1층',
+        phone: '0507-1379-6632',
+        point: '11월 18일(수) 타 단체 예약으로 혼잡 예상'
+      },
+      {
+        id: 5,
+        mealType: 'dinner',
+        mealLabel: '석식',
+        badgeColor: 'bg-indigo-100 text-indigo-800 border-indigo-200',
+        name: '기호식품',
+        menuA: '육개장',
+        menuB: '순대국밥',
+        distance: '도보 29분 (1.8km)',
+        address: '광주 서구 상무번영로 12',
+        phone: '062-375-9882',
+        point: '24시간 영업'
+      },
+      {
+        id: 6,
+        mealType: 'dinner',
+        mealLabel: '석식',
+        badgeColor: 'bg-indigo-100 text-indigo-800 border-indigo-200',
+        name: '탄쇼',
+        menuA: '연어덮밥',
+        menuB: '튀김덮밥',
+        distance: '도보 30분 (1.9km)',
+        address: '광주 서구 상무자유로 174, 1층',
+        phone: '062-384-8873',
+        point: '이용 가능 여부 확인 중 (방문 전 확인 권장)'
+      },
+      {
+        id: 7,
+        mealType: 'dinner',
+        mealLabel: '석식',
+        badgeColor: 'bg-indigo-100 text-indigo-800 border-indigo-200',
+        name: '홍익궁중전통육개장 상무점',
+        menuA: '전통육개장',
+        menuB: '전통닭개장',
+        distance: '도보 31분 (1.9km)',
+        address: '광주 서구 상무연하로 60, 1층',
+        phone: '062-376-3030',
+        point: '11월 21일(토) 휴무'
+      }
     ];
 
-    let currentFilter = 'ALL';
-    let currentSearch = '';
+    // 지정 식당 카드 렌더링
+    function renderRestaurants(mealFilter = 'all') {
+      const grid = document.getElementById('restaurant-grid');
+      const filtered = mealFilter === 'all'
+        ? restaurantsData
+        : restaurantsData.filter(item => item.mealType === mealFilter);
 
-    // 소속 / 직책 표기 포맷터
-    function formatOrgRole(orgStr) {
-      if (!orgStr || orgStr === '-') {
-        return `<span class="text-slate-400 font-medium">-</span>`;
-      }
-      if (orgStr.includes(' · ')) {
-        const parts = orgStr.split(' · ');
-        return `<div class="font-semibold text-slate-800 leading-snug">${parts[0]} <span class="text-slate-400 font-normal">·</span> <span class="text-royal-600 font-bold">${parts[1]}</span></div>`;
-      }
-      return `<div class="font-semibold text-slate-800 leading-snug">${orgStr}</div>`;
-    }
-
-    // 숙박일 셀 렌더링
-    function renderDayCell(status, isLastCol) {
-      const borderClass = isLastCol ? '' : 'border-r border-slate-100';
-      if (status === 1) {
-        return `<td class="py-2.5 px-1 text-center ${borderClass}">
-          <span class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-royal-600 text-white text-[11px] font-bold shadow-2xs badge-print" title="숙박 (투숙일)">●</span>
-        </td>`;
-      }
-      if (status === 2) {
-        return `<td class="py-2.5 px-1 text-center ${borderClass}">
-          <span class="inline-flex items-center justify-center px-1.5 h-6 rounded-md bg-amber-100 text-amber-800 border border-amber-300 text-[10px] font-extrabold tracking-tight badge-print" title="체크아웃 (퇴실일)">OUT</span>
-        </td>`;
-      }
-      return `<td class="py-2.5 px-1 text-center text-slate-300 ${borderClass}">·</td>`;
-    }
-
-    // 전체 숙박 일정 매트릭스 테이블 렌더링
-    function renderTable() {
-      const tbody = document.getElementById('scheduleTableBody');
-      const emptyBox = document.getElementById('emptyStateBox');
-      const searchBanner = document.getElementById('searchResultBanner');
-      const searchResultText = document.getElementById('searchResultText');
-
-      const query = currentSearch.trim().toLowerCase();
-
-      const filtered = accommodationData.filter(item => {
-        if (currentFilter === 'LONG' && !(item.duration.startsWith('6박') || item.duration.startsWith('3박'))) return false;
-        if (currentFilter === 'IN18' && !(item.days[3] === 1 && item.days[2] === 0)) return false;
-        if (currentFilter === 'IN19' && !(item.days[4] === 1 && item.days[3] === 0)) return false;
-
-        if (query) {
-          const target = `${item.name} ${item.org} ${item.room} ${item.duration} ${item.shortDate}`.toLowerCase();
-          return target.includes(query);
-        }
-        return true;
-      });
-
-      if (query || currentFilter !== 'ALL') {
-        searchBanner.classList.remove('hidden');
-        searchResultText.textContent = `조건 일치: 총 ${filtered.length}명 조회됨 (전체 24명 중)`;
-      } else {
-        searchBanner.classList.add('hidden');
-      }
-
-      if (filtered.length === 0) {
-        tbody.innerHTML = '';
-        emptyBox.classList.remove('hidden');
-        return;
-      }
-
-      emptyBox.classList.add('hidden');
-
-      tbody.innerHTML = filtered.map(item => {
-        const durationBadgeClass = item.duration.startsWith('6박')
-          ? 'bg-navy-900 text-white'
-          : item.duration.startsWith('3박')
-            ? 'bg-royal-100 text-royal-600 border border-royal-200'
-            : item.duration.startsWith('2박')
-              ? 'bg-sky-50 text-sky-800 border border-sky-200'
-              : 'bg-slate-100 text-slate-700 border border-slate-200';
-
-        const dayCells = item.days.map((st, idx) => renderDayCell(st, idx === item.days.length - 1)).join('');
-
+      grid.innerHTML = filtered.map(r => {
+        const naverUrl = `https://map.naver.com/p/search/${encodeURIComponent(r.address)}`;
+        const kakaoUrl = `https://map.kakao.com/link/search/${encodeURIComponent(r.address)}`;
         return `
-          <tr class="hover:bg-royal-50/50 transition-colors">
-            <td class="py-3 px-2.5 text-center font-bold text-slate-500 border-r border-slate-100">${item.no}</td>
-            <td class="py-3 px-3 font-extrabold text-navy-900 border-r border-slate-100 whitespace-nowrap">${item.name}</td>
-            <td class="py-3 px-3 border-r border-slate-100">${formatOrgRole(item.org)}</td>
-            <td class="py-3 px-3 text-center border-r border-slate-100 whitespace-nowrap">
-              <span class="inline-block px-2.5 py-1 rounded-md bg-navy-900/5 text-navy-900 font-extrabold text-xs">${item.room}</span>
-            </td>
-            <td class="py-3 px-2.5 text-center border-r border-slate-200 whitespace-nowrap">
-              <span class="inline-block px-2.5 py-0.5 rounded-md text-[11px] font-bold ${durationBadgeClass} badge-print">${item.duration}</span>
-            </td>
-            ${dayCells}
-          </tr>
+          <article class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden print-shadow-none print-break-inside-avoid">
+            <div class="p-5 sm:p-6">
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-extrabold border ${r.badgeColor} badge-print">${r.mealLabel} 지정</span>
+                <span class="text-xs font-bold text-slate-600 bg-slate-100 px-2.5 py-1 rounded-lg">
+                  🚶 ${r.distance}
+                </span>
+              </div>
+              <h3 class="text-lg sm:text-xl font-extrabold text-navy-900 mb-4">${r.name}</h3>
+              <div class="bg-slate-50 rounded-xl p-3.5 border border-slate-200/70 mb-4">
+                <div class="text-[11px] font-extrabold text-royal-600 uppercase tracking-wider mb-2">지정 메뉴 (2종 중 택1)</div>
+                <div class="space-y-1.5 text-xs sm:text-sm">
+                  <div class="flex items-center gap-2"><span class="px-1.5 py-0.5 rounded bg-royal-600 text-white text-[10px] font-extrabold badge-print">메뉴 A</span><span class="font-bold text-slate-800">${r.menuA}</span></div>
+                  <div class="flex items-center gap-2"><span class="px-1.5 py-0.5 rounded bg-slate-700 text-white text-[10px] font-extrabold badge-print">메뉴 B</span><span class="font-bold text-slate-800">${r.menuB}</span></div>
+                </div>
+              </div>
+              <div class="flex items-start gap-2 text-xs text-slate-700 bg-royal-50/80 rounded-xl p-3 mb-4 border border-royal-100">
+                <span class="text-royal-600 font-extrabold shrink-0">ⓘ</span>
+                <span class="font-medium leading-relaxed">${r.point}</span>
+              </div>
+              <div class="space-y-1.5 text-xs text-slate-600">
+                <div class="flex items-start gap-2"><span class="text-slate-400 shrink-0">📍</span><span>${r.address}</span></div>
+                <div class="flex items-center gap-2"><span class="text-slate-400 shrink-0">📞</span><a href="tel:${r.phone}" class="hover:text-royal-600 font-semibold">${r.phone}</a></div>
+              </div>
+            </div>
+            <div class="no-print px-5 py-3.5 bg-slate-50 border-t border-slate-100 flex items-center gap-2">
+              <button onclick="copyAddress('${r.address}')" class="flex-1 py-2 px-2.5 rounded-xl bg-white border border-slate-200 hover:border-royal-600 text-slate-700 hover:text-royal-600 text-xs font-bold transition-colors flex items-center justify-center gap-1">
+                주소 복사
+              </button>
+              <a href="${naverUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 px-2.5 rounded-xl bg-[#03C75A] hover:opacity-90 text-white text-xs font-bold flex items-center justify-center gap-1">
+                <span class="font-extrabold">N</span> 네이버
+              </a>
+              <a href="${kakaoUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 px-2.5 rounded-xl bg-[#FEE500] hover:opacity-90 text-[#191919] text-xs font-bold flex items-center justify-center gap-1">
+                카카오
+              </a>
+            </div>
+          </article>
         `;
       }).join('');
     }
 
-    // 빠른 필터 설정
-    function setQuickFilter(filterKey) {
-      currentFilter = filterKey;
-      document.querySelectorAll('.filter-btn').forEach(btn => {
-        if (btn.dataset.filter === filterKey) {
-          btn.className = 'filter-btn active px-3 py-1.5 rounded-lg text-xs font-bold bg-navy-900 text-white transition';
+    // 조·중·석식 필터 전환
+    function filterRestaurants(mealType) {
+      document.querySelectorAll('.meal-filter-btn').forEach(btn => {
+        if (btn.dataset.meal === mealType) {
+          btn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200', 'font-semibold');
+          btn.classList.add('bg-royal-600', 'text-white', 'shadow-sm', 'font-bold');
         } else {
-          btn.className = 'filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition';
+          btn.classList.remove('bg-royal-600', 'text-white', 'shadow-sm', 'font-bold');
+          btn.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200', 'font-semibold');
         }
       });
-      renderTable();
-    }
-
-    // 검색 및 필터 초기화
-    function resetFilters() {
-      currentFilter = 'ALL';
-      currentSearch = '';
-      const searchInput = document.getElementById('searchInput');
-      const clearBtn = document.getElementById('clearSearchBtn');
-      if (searchInput) searchInput.value = '';
-      if (clearBtn) clearBtn.classList.add('hidden');
-
-      document.querySelectorAll('.filter-btn').forEach(btn => {
-        if (btn.dataset.filter === 'ALL') {
-          btn.className = 'filter-btn active px-3 py-1.5 rounded-lg text-xs font-bold bg-navy-900 text-white transition';
-        } else {
-          btn.className = 'filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition';
-        }
-      });
-
-      renderTable();
+      renderRestaurants(mealType);
     }
 
     // 주소 복사 (iFrame 호환 execCommand 지원)
-    function copyAddress() {
-      const address = document.getElementById('hotelAddressText').innerText;
+    function copyAddress(address) {
+      const targetAddress = address || document.getElementById('hotelAddressText').innerText;
       const tempInput = document.createElement('textarea');
-      tempInput.value = address;
+      tempInput.value = targetAddress;
       document.body.appendChild(tempInput);
       tempInput.select();
       try {
         document.execCommand('copy');
-        showToast('호텔 주소가 복사되었습니다: ' + address);
+        showToast('주소가 복사되었습니다: ' + targetAddress);
       } catch (err) {
         showToast('주소 복사 중 오류가 발생했습니다.');
       }
@@ -694,22 +630,9 @@
       }, 2800);
     }
 
-    // 이벤트 바인딩 및 초기 렌더링
+    // 초기 렌더링
     document.addEventListener('DOMContentLoaded', () => {
-      const searchInput = document.getElementById('searchInput');
-      const clearBtn = document.getElementById('clearSearchBtn');
-
-      searchInput.addEventListener('input', (e) => {
-        currentSearch = e.target.value;
-        if (currentSearch.trim().length > 0) {
-          clearBtn.classList.remove('hidden');
-        } else {
-          clearBtn.classList.add('hidden');
-        }
-        renderTable();
-      });
-
-      renderTable();
+      renderRestaurants('all');
     });
   </script>
 </body>
