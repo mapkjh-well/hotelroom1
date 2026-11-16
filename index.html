@@ -38,11 +38,12 @@
         .badge.hotel { background: #e0f2fe; color: #0284c7; }
 
         .card h3 { font-size: 1.25rem; margin-bottom: 10px; color: var(--text-main); }
-        .menu-box { background: #f1f5f9; padding: 10px 14px; border-radius: 6px; margin: 10px 0; font-size: 0.9rem; }
+        .menu-box { background: #f1f5f9; padding: 10px 14px; border-radius: 6px; margin: 10px 0; font-size: 0.95rem; font-weight: bold; color: #333; }
         .info-list { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px; }
-        .info-list div { margin-bottom: 4px; }
+        .info-list div { margin-bottom: 6px; }
+        .student-notice { color: #e11d48; font-size: 0.85rem; font-weight: 600; margin-top: 5px; }
         
-        .btn-group { display: flex; gap: 8px; margin-top: auto; }
+        .btn-group { display: flex; gap: 8px; margin-top: 15px; }
         .btn { flex: 1; text-align: center; padding: 8px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: background 0.2s; }
         .btn-naver { background: #03c75a; color: white; }
         .btn-naver:hover { background: #02b350; }
@@ -52,17 +53,6 @@
         .hotel-card { background: white; border-radius: 12px; padding: 24px; border: 1px solid var(--border-color); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
         .hotel-card h3 { font-size: 1.3rem; margin-bottom: 8px; color: var(--primary-dark); }
         .room-assign-notice { background: #fffbeb; border: 1px solid #fef3c7; color: #b45309; padding: 12px 16px; border-radius: 8px; margin-top: 15px; font-weight: 600; font-size: 0.95rem; }
-
-        .search-box { margin-bottom: 20px; display: flex; gap: 10px; }
-        .search-box input { flex: 1; padding: 12px 16px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1rem; outline: none; }
-        .search-box input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
-
-        .table-responsive { width: 100%; overflow-x: auto; background: white; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border: 1px solid var(--border-color); }
-        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; }
-        th, td { padding: 14px 16px; border-bottom: 1px solid var(--border-color); }
-        th { background: #f8fafc; font-weight: 600; color: var(--text-muted); }
-        tr:last-child td { border-bottom: none; }
-        tr:hover { background: #f8fafc; }
 
         @media (max-width: 768px) {
             .grid-3 { grid-template-columns: 1fr; }
@@ -74,40 +64,171 @@
     <div class="container">
         <header>
             <h1>숙소 및 방배정 안내</h1>
-            <p>첨단소재·나노융합 혁신융합대학사업단 | 행사 기간 식당, 숙박 및 일정 안내 페이지</p>
+            <p>첨단소재·나노융합 혁신융합대학사업단 | 행사 기간 식당, 숙박 안내 페이지</p>
         </header>
 
         <div class="notice-banner">
-            <strong>💡 식당 이용 공통 수칙:</strong> 식당 방문 시 <strong>'첨단소재(중앙대)'</strong>를 말씀하시고, 명부에 소속·성명을 작성한 뒤 지정 메뉴 중 택1을 이용해 주세요. (운영팀 일괄 결제)
+            <strong>💡 식당 이용 공통 수칙:</strong> 식당 방문 시 <strong>'첨단소재(중앙대)'</strong>를 말씀하시고, 명부에 소속·성명을 작성한 뒤 지정 메뉴 2개 중 택1을 이용해 주세요.
         </div>
 
         <!-- 숙박 장소 섹션 -->
         <section>
             <h2>🏨 지정 숙박 장소 안내</h2>
-            <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));">
+            <div class="grid-3" style="grid-template-columns: 1fr;">
                 <div class="hotel-card">
-                    <span class="badge hotel">숙소 1</span>
-                    <h3>호텔 란타나</h3>
+                    <span class="badge hotel">관계자 숙소</span>
+                    <h3>에이치에비뉴호텔 (H-AVENUE)</h3>
                     <div class="info-list" style="margin-top: 10px;">
-                        <div>📍 전남광주 서구 상무평화로 130</div>
-                        <div>🚶 행사장까지 도보 약 15분</div>
-                        <div>🛏️ 객실 유형: 더블룸 · 1인실 기준</div>
-                    </div>
-                    <div class="room-assign-notice">
-                        ※ 객실 방 배정은 당일 현장 배정됩니다.
-                    </div>
-                </div>
-
-                <div class="hotel-card">
-                    <span class="badge hotel">숙소 2</span>
-                    <h3>호텔 얌</h3>
-                    <div class="info-list" style="margin-top: 10px;">
-                        <div>📍 전남광주 서구 상무평화로 150</div>
+                        <div>📍 전남광주 서구 시청로20번길 21-6</div>
                         <div>🚶 행사장까지 도보 약 19분</div>
                         <div>🛏️ 객실 유형: 더블룸 · 1인실 기준</div>
                     </div>
                     <div class="room-assign-notice">
-                        ※ 객실 방 배정은 당일 현장 배정됩니다.
+                        ※ 현장에서 성함 말씀해주시면 방 배정해드립니다.
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://map.naver.com/v5/search/%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%8B%9C%EC%B2%AD%EB%A1%9C20%EB%B2%88%EA%B8%B8%2021-6" target="_blank" class="btn btn-naver">네이버지도</a>
+                        <a href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%8B%9C%EC%B2%AD%EB%A1%9C20%EB%B2%88%EA%B8%B8%2021-6" target="_blank" class="btn btn-kakao">카카오맵</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 식당 안내 섹션 -->
+        <section>
+            <h2>🍳 조식 식당 (1곳)</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div>
+                        <span class="badge breakfast">조식</span>
+                        <h3>브로샌드위치</h3>
+                        <div class="menu-box">메뉴: 햄치즈에그 / 크랜베리 닭가슴살</div>
+                        <div class="info-list">
+                            <div>📍 광주 서구 치평로 2, 1층 104호</div>
+                            <div>🚶 도보 약 15분 (985m)</div>
+                            <div>📞 0507-1498-2577</div>
+                            <div class="student-notice">* 샌드위치 2종 중 택1</div>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://map.naver.com/v5/search/%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%B9%98%ED%8F%89%EB%A1%9C%202%20%EB%B8%8C%EB%A1%9C%EC%83%8C%EB%93%9C%EC%9C%84%EC%B9%98" target="_blank" class="btn btn-naver">네이버지도</a>
+                        <a href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%B9%98%ED%8F%89%EB%A1%9C%202%20%EB%B8%8C%EB%A1%9C%EC%83%8C%EB%93%9C%EC%9C%84%EC%B9%98" target="_blank" class="btn btn-kakao">카카오맵</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🍱 중식 식당 (3곳)</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div>
+                        <span class="badge lunch">중식</span>
+                        <h3>가마솥우정설렁탕갈비탕</h3>
+                        <div class="menu-box">메뉴: 설렁탕 / 갈비탕</div>
+                        <div class="info-list">
+                            <div>📍 전남광주 서구 상무화원로11번길 4</div>
+                            <div>🚶 도보 약 2분 (170m)</div>
+                            <div>📞 062-381-8225</div>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://map.naver.com/v5/search/%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%ED%99%94%EC%9B%90%EB%A1%9C11%EB%B2%88%EA%B8%B8%204" target="_blank" class="btn btn-naver">네이버지도</a>
+                        <a href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%ED%99%94%EC%9B%90%EB%A1%9C11%EB%B2%88%EA%B8%B8%204" target="_blank" class="btn btn-kakao">카카오맵</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="badge lunch">중식</span>
+                        <h3>일담</h3>
+                        <div class="menu-box">메뉴: 수제 생 등심 돈카츠 / 규동</div>
+                        <div class="info-list">
+                            <div>📍 광주 서구 상무화원로17번길 1, 1층</div>
+                            <div>🚶 도보 약 8분 (507m)</div>
+                            <div>📞 062-381-3788</div>
+                            <div class="student-notice">* 일요일 정기휴무</div>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://map.naver.com/v5/search/%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%ED%99%94%EC%9B%90%EB%A1%9C17%EB%B2%88%EA%B8%B8%201%20%EC%9D%BC%EB%8B%B4" target="_blank" class="btn btn-naver">네이버지도</a>
+                        <a href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%ED%99%94%EC%9B%90%EB%A1%9C17%EB%B2%88%EA%B8%B8%201%20%EC%9D%BC%EB%8B%B4" target="_blank" class="btn btn-kakao">카카오맵</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="badge lunch">중식</span>
+                        <h3>짬뽕회관 상무점</h3>
+                        <div class="menu-box">메뉴: 대박짬뽕 / 순두부짬뽕밥</div>
+                        <div class="info-list">
+                            <div>📍 광주 서구 상무공원로 1, 1층</div>
+                            <div>🚶 도보 약 10분 (666m)</div>
+                            <div>📞 0507-1379-6632</div>
+                            <div class="student-notice">* 18일 11시·12시 타 단체 예약 → 혼잡</div>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://map.naver.com/v5/search/%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%EA%B3%B5%EC%9B%90%EB%A1%9C%201%20%EC%BE%B8%EB%BD%95%ED%9A%8C%EA%B4%80" target="_blank" class="btn btn-naver">네이버지도</a>
+                        <a href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%EA%B3%B5%EC%9B%90%EB%A1%9C%201%20%EC%BE%B8%EB%BD%95%ED%9A%8C%EA%B4%80" target="_blank" class="btn btn-kakao">카카오맵</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🍲 석식 식당 (3곳)</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div>
+                        <span class="badge dinner">석식</span>
+                        <h3>기호식품</h3>
+                        <div class="menu-box">메뉴: 육개장 / 순대국밥</div>
+                        <div class="info-list">
+                            <div>📍 광주 서구 상무번영로 12</div>
+                            <div>🚶 도보 약 29분 (1.8km)</div>
+                            <div>📞 062-375-9882</div>
+                            <div class="student-notice">* 24시간 영업</div>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://map.naver.com/v5/search/%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%EB%B2%88%EC%98%81%EB%A1%9C%2012%20%EA%B8%B0%ED%98%B8%EC%8B%9D%ED%92%88" target="_blank" class="btn btn-naver">네이버지도</a>
+                        <a href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%EB%B2%88%EC%98%81%EB%A1%9C%2012%20%EA%B8%B0%ED%98%B8%EC%8B%9D%ED%92%88" target="_blank" class="btn btn-kakao">카카오맵</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="badge dinner">석식</span>
+                        <h3>멘야마쯔리상무점</h3>
+                        <div class="menu-box">메뉴: 라멘 / 마제소바</div>
+                        <div class="info-list">
+                            <div>📍 전남광주 서구 시청로 57 1층</div>
+                            <div>🚶 도보 약 25분 (1.7km)</div>
+                            <div>📞 0507-1341-1988</div>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://map.naver.com/v5/search/%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%8B%9C%EC%B2%AD%EB%A1%9C%2057%20%EB%A9%98%EC%95%BC%EB%A7%88%EC%AF%94%EB%A6%AC" target="_blank" class="btn btn-naver">네이버지도</a>
+                        <a href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%8B%9C%EC%B2%AD%EB%A1%9C%2057%20%EB%A9%98%EC%95%BC%EB%A7%88%EC%AF%94%EB%A6%AC" target="_blank" class="btn btn-kakao">카카오맵</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="badge dinner">석식</span>
+                        <h3>홍익궁중전통육개장 상무점</h3>
+                        <div class="menu-box">메뉴: 전통육개장 / 전통닭개장</div>
+                        <div class="info-list">
+                            <div>📍 광주 서구 상무연하로 60, 1층</div>
+                            <div>🚶 도보 약 31분 (1.9km)</div>
+                            <div>📞 062-376-3030</div>
+                            <div class="student-notice">* 21일 휴무</div>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://map.naver.com/v5/search/%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%EC%97%B0%ED%95%98%EB%A1%9C%2060%20%ED%99%8D%EC%9D%B5%EA%B6%81%EC%A4%91%EC%A0%84%ED%86%B5%EC%9C%A1%EA%B0%9C%EC%9E%A5" target="_blank" class="btn btn-naver">네이버지도</a>
+                        <a href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%EC%97%B0%ED%95%98%EB%A1%9C%2060%20%ED%99%8D%EC%9D%B5%EA%B6%81%EC%A4%91%EC%A0%84%ED%86%B5%EC%9C%A1%EA%B0%9C%EC%9E%A5" target="_blank" class="btn btn-kakao">카카오맵</a>
                     </div>
                 </div>
             </div>
