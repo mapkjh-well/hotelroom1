@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 CO-SHOW 첨단소재나노융합 참가자 종합 안내</title>
+    <title>숙소 및 방배정 안내 | 첨단소재·나노융합 혁신융합대학사업단</title>
     <style>
-        /* 디자인 토큰 및 기본 스타일 설정 */
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
@@ -15,376 +14,72 @@
             --text-muted: #64748b;
             --border-color: #e2e8f0;
         }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
-        }
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding: 20px;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
         
-        /* 상단 헤더 배너 */
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            background: linear-gradient(135deg, #1e4ed8, #2563eb);
-            color: white;
-            padding: 40px 20px;
-            border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-        header h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
+        header { text-align: center; margin-bottom: 40px; background: linear-gradient(135deg, #1e4ed8, #2563eb); color: white; padding: 40px 20px; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        header h1 { font-size: 2rem; margin-bottom: 10px; font-weight: 700; }
+        header p { font-size: 1.1rem; opacity: 0.9; }
 
-        /* 공통 수칙 알림 배너 */
-        .notice-banner {
-            background: #eff6ff;
-            border-left: 4px solid var(--primary);
-            padding: 15px 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            font-size: 0.95rem;
-        }
-        .notice-banner strong {
-            color: var(--primary-dark);
-        }
+        .notice-banner { background: #eff6ff; border-left: 4px solid var(--primary); padding: 15px 20px; border-radius: 8px; margin-bottom: 30px; font-size: 0.95rem; }
+        .notice-banner strong { color: var(--primary-dark); }
 
-        /* 섹션 제목 및 그리드 레이아웃 */
-        section {
-            margin-bottom: 40px;
-        }
-        h2 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--border-color);
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+        section { margin-bottom: 40px; }
+        h2 { font-size: 1.5rem; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--border-color); color: var(--text-main); display: flex; align-items: center; gap: 10px; }
 
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 24px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .card { background: var(--card-bg); border-radius: 12px; padding: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: space-between; }
         
-        /* 구분 배지 */
-        .badge {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
+        .badge { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; margin-bottom: 12px; }
         .badge.breakfast { background: #fef3c7; color: #d97706; }
         .badge.lunch { background: #d1fae5; color: #059669; }
         .badge.dinner { background: #ede9fe; color: #7c3aed; }
         .badge.hotel { background: #e0f2fe; color: #0284c7; }
 
-        .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-            color: var(--text-main);
-        }
-        .menu-box {
-            background: #f1f5f9;
-            padding: 10px 14px;
-            border-radius: 6px;
-            margin: 10px 0;
-            font-size: 0.9rem;
-        }
-        .info-list {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 15px;
-        }
-        .info-list div {
-            margin-bottom: 4px;
-        }
+        .card h3 { font-size: 1.25rem; margin-bottom: 10px; color: var(--text-main); }
+        .menu-box { background: #f1f5f9; padding: 10px 14px; border-radius: 6px; margin: 10px 0; font-size: 0.9rem; }
+        .info-list { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px; }
+        .info-list div { margin-bottom: 4px; }
         
-        /* 지도 바로가기 버튼 그룹 */
-        .btn-group {
-            display: flex;
-            gap: 8px;
-            margin-top: auto;
-        }
-        .btn {
-            flex: 1;
-            text-align: center;
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background 0.2s;
-        }
+        .btn-group { display: flex; gap: 8px; margin-top: auto; }
+        .btn { flex: 1; text-align: center; padding: 8px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: background 0.2s; }
         .btn-naver { background: #03c75a; color: white; }
         .btn-naver:hover { background: #02b350; }
         .btn-kakao { background: #fee500; color: #191919; }
         .btn-kakao:hover { background: #fdd800; }
 
-        /* 숙박 장소 카드 */
-        .hotel-card {
-            background: white;
-            border-radius: 12px;
-            padding: 24px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-        .hotel-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-            color: var(--primary-dark);
-        }
-        .room-assign-notice {
-            background: #fffbeb;
-            border: 1px solid #fef3c7;
-            color: #b45309;
-            padding: 12px 16px;
-            border-radius: 8px;
-            margin-top: 15px;
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
+        .hotel-card { background: white; border-radius: 12px; padding: 24px; border: 1px solid var(--border-color); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .hotel-card h3 { font-size: 1.3rem; margin-bottom: 8px; color: var(--primary-dark); }
+        .room-assign-notice { background: #fffbeb; border: 1px solid #fef3c7; color: #b45309; padding: 12px 16px; border-radius: 8px; margin-top: 15px; font-weight: 600; font-size: 0.95rem; }
 
-        /* 학생 일정 검색 및 테이블 */
-        .search-box {
-            margin-bottom: 20px;
-            display: flex;
-            gap: 10px;
-        }
-        .search-box input {
-            flex: 1;
-            padding: 12px 16px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 1rem;
-            outline: none;
-        }
-        .search-box input:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
+        .search-box { margin-bottom: 20px; display: flex; gap: 10px; }
+        .search-box input { flex: 1; padding: 12px 16px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1rem; outline: none; }
+        .search-box input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
 
-        .table-responsive {
-            width: 100%;
-            overflow-x: auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--border-color);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 0.9rem;
-        }
-        th, td {
-            padding: 14px 16px;
-            border-bottom: 1px solid var(--border-color);
-        }
-        th {
-            background: #f8fafc;
-            font-weight: 600;
-            color: var(--text-muted);
-        }
-        tr:last-child td {
-            border-bottom: none;
-        }
-        tr:hover {
-            background: #f8fafc;
-        }
+        .table-responsive { width: 100%; overflow-x: auto; background: white; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border: 1px solid var(--border-color); }
+        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; }
+        th, td { padding: 14px 16px; border-bottom: 1px solid var(--border-color); }
+        th { background: #f8fafc; font-weight: 600; color: var(--text-muted); }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: #f8fafc; }
 
-        /* 모바일 반응형 대응 */
         @media (max-width: 768px) {
-            .grid-3 {
-                grid-template-columns: 1fr !important;
-            }
-            header h1 {
-                font-size: 1.6rem;
-            }
+            .grid-3 { grid-template-columns: 1fr; }
+            header h1 { font-size: 1.6rem; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- 헤더 -->
         <header>
-            <h1>2026 CO-SHOW 첨단소재나노융합 참가자 종합 안내</h1>
-            <p>중앙대학교 혁신융합대학사업단 | 행사 기간 식당, 숙박 및 일정 안내 페이지</p>
+            <h1>숙소 및 방배정 안내</h1>
+            <p>첨단소재·나노융합 혁신융합대학사업단 | 행사 기간 식당, 숙박 및 일정 안내 페이지</p>
         </header>
 
-        <!-- 공통 이용 수칙 배너 -->
         <div class="notice-banner">
             <strong>💡 식당 이용 공통 수칙:</strong> 식당 방문 시 <strong>'첨단소재(중앙대)'</strong>를 말씀하시고, 명부에 소속·성명을 작성한 뒤 지정 메뉴 중 택1을 이용해 주세요. (운영팀 일괄 결제)
         </div>
-
-        <!-- 조식 섹션 (1곳) -->
-        <section>
-            <h2>🍳 조식 안내 (1곳)</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <div>
-                        <span class="badge breakfast">조식 지정</span>
-                        <h3>브로샌드위치</h3>
-                        <div class="menu-box"><strong>지정 메뉴:</strong> 햄치즈에그 / 크랜베리 닭가슴살 (택1)</div>
-                        <div class="info-list">
-                            <div>📍 광주 서구 치평로 2, 1층 104호</div>
-                            <div>📞 0507-1498-2577</div>
-                            <div>🚶 행사장 기준 도보 약 15분 (985m)</div>
-                        </div>
-                    </div>
-                    <div class="btn-group">
-                        <a href="https://map.naver.com/p/search/%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%B9%98%ED%8F%89%EB%A1%9C%202" target="_blank" rel="noopener noreferrer" class="btn btn-naver">네이버 지도</a>
-                        <a href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%B9%98%ED%8F%89%EB%A1%9C%202" target="_blank" rel="noopener noreferrer" class="btn btn-kakao">카카오 지도</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 중식 섹션 (3곳 - 수정식당 반영) -->
-        <section>
-            <h2>🍱 중식 안내 (3곳)</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <div>
-                        <span class="badge lunch">중식 지정</span>
-                        <h3>가마솥우정설렁탕갈비탕</h3>
-                        <div class="menu-box"><strong>지정 메뉴:</strong> 설렁탕 / 갈비탕 (택1)</div>
-                        <div class="info-list">
-                            <div>📍 전남광주 서구 상무화원로11번길 4</div>
-                            <div>📞 062-381-8225</div>
-                            <div>🚶 도보 약 2분 (170m)</div>
-                        </div>
-                    </div>
-                    <div class="btn-group">
-                        <a href="https://map.naver.com/p/search/%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%ED%99%94%EC%9B%90%EB%A1%9C11%EB%B2%88%EA%B8%B8%204" target="_blank" rel="noopener noreferrer" class="btn btn-naver">네이버 지도</a>
-                        <a href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%ED%99%94%EC%9B%90%EB%A1%9C11%EB%B2%88%EA%B8%B8%204" target="_blank" rel="noopener noreferrer" class="btn btn-kakao">카카오 지도</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <span class="badge lunch">중식 지정</span>
-                        <h3>일담</h3>
-                        <div class="menu-box"><strong>지정 메뉴:</strong> 수제 생 등심 돈카츠 / 규동 (택1)<br><small style="color:#d97706;">※ 일요일 정기휴무</small></div>
-                        <div class="info-list">
-                            <div>📍 광주 서구 상무화원로17번길 1, 1층</div>
-                            <div>📞 062-381-3788</div>
-                            <div>🚶 도보 약 8분 (507m)</div>
-                        </div>
-                    </div>
-                    <div class="btn-group">
-                        <a href="https://map.naver.com/p/search/%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%ED%99%94%EC%9B%90%EB%A1%9C17%EB%B2%88%EA%B8%B8%201" target="_blank" rel="noopener noreferrer" class="btn btn-naver">네이버 지도</a>
-                        <a href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%ED%99%94%EC%9B%90%EB%A1%9C17%EB%B2%88%EA%B8%B8%201" target="_blank" rel="noopener noreferrer" class="btn btn-kakao">카카오 지도</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <span class="badge lunch">중식 지정</span>
-                        <h3>짬뽕회관 상무점</h3>
-                        <div class="menu-box"><strong>지정 메뉴:</strong> 대박짬뽕 / 순두부짬뽕밥 (택1)<br><small style="color:#d97706;">※ 18일 11시·12시 타 단체 예약으로 혼잡 주의</small></div>
-                        <div class="info-list">
-                            <div>📍 광주 서구 상무공원로 1, 1층</div>
-                            <div>📞 0507-1379-6632</div>
-                            <div>🚶 도보 약 10분 (666m)</div>
-                        </div>
-                    </div>
-                    <div class="btn-group">
-                        <a href="https://map.naver.com/p/search/%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%EA%B3%B5%EC%9B%90%EB%A1%9C%201" target="_blank" rel="noopener noreferrer" class="btn btn-naver">네이버 지도</a>
-                        <a href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%EA%B3%B5%EC%9B%90%EB%A1%9C%201" target="_blank" rel="noopener noreferrer" class="btn btn-kakao">카카오 지도</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 석식 섹션 (3곳 - 수정식당 반영) -->
-        <section>
-            <h2>🍲 석식 안내 (3곳)</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <div>
-                        <span class="badge dinner">석식 지정</span>
-                        <h3>기호식품</h3>
-                        <div class="menu-box"><strong>지정 메뉴:</strong> 육개장 / 순대국밥 (택1)<br><small style="color:#059669;">※ 24시간 영업</small></div>
-                        <div class="info-list">
-                            <div>📍 광주 서구 상무번영로 12</div>
-                            <div>📞 062-375-9882</div>
-                            <div>🚶 도보 약 29분 (1.8km)</div>
-                        </div>
-                    </div>
-                    <div class="btn-group">
-                        <a href="https://map.naver.com/p/search/%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%EB%B2%88%EC%98%81%EB%A1%9C%2012" target="_blank" rel="noopener noreferrer" class="btn btn-naver">네이버 지도</a>
-                        <a href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%EB%B2%88%EC%98%81%EB%A1%9C%2012" target="_blank" rel="noopener noreferrer" class="btn btn-kakao">카카오 지도</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <span class="badge dinner">석식 지정</span>
-                        <h3>멘야마쯔리상무점</h3>
-                        <div class="menu-box"><strong>지정 메뉴:</strong> 라멘 / 마제소바 (택1)</div>
-                        <div class="info-list">
-                            <div>📍 전남광주 서구 시청로 57 1층 멘야마쯔리</div>
-                            <div>📞 0507-1341-1988</div>
-                            <div>🚶 도보 약 25분 (1.7km)</div>
-                        </div>
-                    </div>
-                    <div class="btn-group">
-                        <a href="https://map.naver.com/p/search/%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%8B%9C%EC%B2%AD%EB%A1%9C%2057" target="_blank" rel="noopener noreferrer" class="btn btn-naver">네이버 지도</a>
-                        <a href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%8B%9C%EC%B2%AD%EB%A1%9C%2057" target="_blank" rel="noopener noreferrer" class="btn btn-kakao">카카오 지도</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <span class="badge dinner">석식 지정</span>
-                        <h3>홍익궁중전통육개장 상무점</h3>
-                        <div class="menu-box"><strong>지정 메뉴:</strong> 전통육개장 / 전통닭개장 (택1)<br><small style="color:#d97706;">※ 21일 휴무 주의</small></div>
-                        <div class="info-list">
-                            <div>📍 광주 서구 상무연하로 60, 1층</div>
-                            <div>📞 062-376-3030</div>
-                            <div>🚶 도보 약 31분 (1.9km)</div>
-                        </div>
-                    </div>
-                    <div class="btn-group">
-                        <a href="https://map.naver.com/p/search/%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%EC%97%B0%ED%95%98%EB%A1%9C%2060" target="_blank" rel="noopener noreferrer" class="btn btn-naver">네이버 지도</a>
-                        <a href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%EC%97%B0%ED%95%98%EB%A1%9C%2060" target="_blank" rel="noopener noreferrer" class="btn btn-kakao">카카오 지도</a>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- 숙박 장소 섹션 -->
         <section>
@@ -397,10 +92,9 @@
                         <div>📍 전남광주 서구 상무평화로 130</div>
                         <div>🚶 행사장까지 도보 약 15분</div>
                         <div>🛏️ 객실 유형: 더블룸 · 1인실 기준</div>
-                        <div>⏰ 체크인: 16시 이후 (짐 사전 보관 가능)</div>
                     </div>
                     <div class="room-assign-notice">
-                        ※ 객실 방 배정은 당일 현장 배정됩니다. (체크인 시 운영진 안내)
+                        ※ 객실 방 배정은 당일 현장 배정됩니다.
                     </div>
                 </div>
 
@@ -411,117 +105,13 @@
                         <div>📍 전남광주 서구 상무평화로 150</div>
                         <div>🚶 행사장까지 도보 약 19분</div>
                         <div>🛏️ 객실 유형: 더블룸 · 1인실 기준</div>
-                        <div>⏰ 체크인: 16시 이후 (짐 사전 보관 가능)</div>
                     </div>
                     <div class="room-assign-notice">
-                        ※ 객실 방 배정은 당일 현장 배정됩니다. (체크인 시 운영진 안내)
+                        ※ 객실 방 배정은 당일 현장 배정됩니다.
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- 학생별 일정 및 숙소 조회 섹션 -->
-        <section>
-            <h2>👥 참가학생별 숙박 일정 및 지정 호텔 조회</h2>
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="학생 성명, 소속 대학 또는 팀명으로 검색하세요 (예: 조현준, 한남대학교, ANSIM)..." onkeyup="filterTable()">
-            </div>
-            <div class="table-responsive">
-                <table id="studentTable">
-                    <thead>
-                        <tr>
-                            <th>성명</th>
-                            <th>소속 대학</th>
-                            <th>팀명</th>
-                            <th>숙박 일정</th>
-                            <th>지정 호텔 / 호실</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>조현준</td><td>한남대학교</td><td>ANSIM</td><td>2박 3일</td><td>얌호텔1</td></tr>
-                        <tr><td>홍현택</td><td>한남대학교</td><td>ANSIM</td><td>2박 3일</td><td>얌호텔2</td></tr>
-                        <tr><td>이민경</td><td>한국기술교육대학교</td><td>OWNWAY</td><td>2박 3일</td><td>얌호텔3</td></tr>
-                        <tr><td>여환철</td><td>인천대학교</td><td>OWNWAY</td><td>2박 3일</td><td>얌호텔4</td></tr>
-                        <tr><td>명채은</td><td>명지대학교</td><td>OWNWAY</td><td>2박 3일</td><td>얌호텔5</td></tr>
-                        <tr><td>이선우</td><td>한국기술교욱대학교</td><td>OWNWAY</td><td>2박 3일</td><td>얌호텔6</td></tr>
-                        <tr><td>이상현</td><td>부산대학교</td><td>Rainmate</td><td>2박 3일</td><td>얌호텔7</td></tr>
-                        <tr><td>유서연</td><td>명지대학교 자연캠퍼스</td><td>Rainmate</td><td>1박 2일</td><td>얌호텔8</td></tr>
-                        <tr><td>김나연</td><td>명지대학교</td><td>Rainmate</td><td>1박 2일</td><td>얌호텔9</td></tr>
-                        <tr><td>한영균</td><td>중앙대</td><td>ResQ4U</td><td>1박 2일</td><td>얌호텔10</td></tr>
-                        <tr><td>김성은</td><td>인천대학교</td><td>Seeme</td><td>2박 3일</td><td>얌호텔11</td></tr>
-                        <tr><td>문광민</td><td>부산대학교</td><td>Seeme</td><td>1박 2일</td><td>얌호텔12</td></tr>
-                        <tr><td>유준서</td><td>한남대학교</td><td>Vanguard</td><td>2박 3일</td><td>얌호텔13</td></tr>
-                        <tr><td>공우석</td><td>한남대학교</td><td>Vanguard</td><td>2박 3일</td><td>얌호텔14</td></tr>
-                        <tr><td>주명로</td><td>한남대학교</td><td>Vanguard</td><td>2박 3일</td><td>얌호텔15</td></tr>
-                        <tr><td>박승훈</td><td>강원대학교</td><td>네이처</td><td>1박 2일</td><td>얌호텔16</td></tr>
-                        <tr><td>엄예진</td><td>강원대학교</td><td>네이처</td><td>1박 2일</td><td>얌호텔17</td></tr>
-                        <tr><td>박성균</td><td>강원대학교</td><td>네이처</td><td>1박 2일</td><td>얌호텔18</td></tr>
-                        <tr><td>박준형</td><td>연세대학교 미래캠퍼스</td><td>땅땅땅</td><td>2박 3일</td><td>얌호텔19</td></tr>
-                        <tr><td>박준우</td><td>한국기술교육대학교</td><td>땅땅땅</td><td>2박 3일</td><td>얌호텔20</td></tr>
-                        <tr><td>이우철</td><td>연세대학교 미래캠퍼스</td><td>땅땅땅</td><td>2박 3일</td><td>얌호텔21</td></tr>
-                        <tr><td>유지연</td><td>한국기술교육대학교</td><td>땅땅땅</td><td>2박 3일</td><td>얌호텔22</td></tr>
-                        <tr><td>강남원</td><td>한국기술교육대학교</td><td>땅땅땅</td><td>1박 2일</td><td>얌호텔23</td></tr>
-                        <tr><td>방기현</td><td>중앙대학교</td><td>리마인두</td><td>1박 2일</td><td>얌호텔24</td></tr>
-                        <tr><td>이시형</td><td>중앙대학교</td><td>리마인두</td><td>1박 2일</td><td>얌호텔25</td></tr>
-                        <tr><td>이시형</td><td>연세대학교 미래캠퍼스</td><td>뽀송뽀송</td><td>1박 2일</td><td>얌호텔26</td></tr>
-                        <tr><td>김주황</td><td>강원대학교</td><td>스파크</td><td>2박 3일</td><td>얌호텔27</td></tr>
-                        <tr><td>김민재</td><td>강원대학교</td><td>커피박의 대반전</td><td>1박 2일</td><td>란타나1</td></tr>
-                        <tr><td>엄지호</td><td>강원대</td><td>커피박의 대반전</td><td>1박 2일</td><td>란타나2</td></tr>
-                        <tr><td>배성준</td><td>강원대학교</td><td>커피박의 대반전</td><td>1박 2일</td><td>란타나3</td></tr>
-                        <tr><td>박현민</td><td>숭실대학교</td><td>홀맨</td><td>2박 3일</td><td>란타나4</td></tr>
-                        <tr><td>조민재</td><td>홍익대학교</td><td>홀맨</td><td>2박 3일</td><td>란타나5</td></tr>
-                        <tr><td>최강</td><td>한국기술교육대학교</td><td>홀맨</td><td>1박 2일</td><td>란타나6</td></tr>
-                        <tr><td>박도현</td><td>한국기술교육대학교</td><td>홀맨</td><td>1박 2일</td><td>란타나7</td></tr>
-                        <tr><td>신종화</td><td>중앙대학교</td><td>홀인원</td><td>2박 3일</td><td>란타나8</td></tr>
-                        <tr><td>성기민</td><td>한밭대학교</td><td>Rain:on</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
-                        <tr><td>이한서</td><td>한남대학교</td><td>RAIN:ON</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
-                        <tr><td>이병렬</td><td>한남대학교</td><td>RAIN:ON</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
-                        <tr><td>임채훈</td><td>한남대학교</td><td>RAIN:ON</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
-                        <tr><td>박해미</td><td>한남대학교</td><td>RAIN:ON</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
-                        <tr><td>조지운</td><td>중앙대학교</td><td>ResQ4U</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
-                        <tr><td>황지민</td><td>경북대학교</td><td>ResQ4U</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
-                        <tr><td>김태호</td><td>숭실대학교</td><td>resQ4U</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
-                        <tr><td>노현주</td><td>명지대학교</td><td>ResQ4U</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
-                        <tr><td>선민정</td><td>중앙대학교</td><td>리마인두</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
-                        <tr><td>류세영</td><td>공과대학</td><td>리마인두</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
-                        <tr><td>김산들</td><td>숭실대학교</td><td>뽀송뽀송</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
-                        <tr><td>조영유</td><td>숭실대학교</td><td>뽀송뽀송</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
-                        <tr><td>임동균</td><td>중앙대학교</td><td>홀인원</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
-                        <tr><td>위정훈</td><td>중앙대학교</td><td>홀인원</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
     </div>
-
-    <!-- 실시간 검색 필터 스크립트 -->
-    <script>
-        function filterTable() {
-            const input = document.getElementById("searchInput");
-            const filter = input.value.toLowerCase();
-            const table = document.getElementById("studentTable");
-            const tr = table.getElementsByTagName("tr");
-
-            for (let i = 1; i < tr.length; i++) {
-                const tdName = tr[i].getElementsByTagName("td")[0];
-                const tdUniv = tr[i].getElementsByTagName("td")[1];
-                const tdTeam = tr[i].getElementsByTagName("td")[2];
-                if (tdName || tdUniv || tdTeam) {
-                    const txtName = tdName.textContent || tdName.innerText;
-                    const txtUniv = tdUniv.textContent || tdUniv.innerText;
-                    const txtTeam = tdTeam.textContent || tdTeam.innerText;
-                    if (
-                        txtName.toLowerCase().indexOf(filter) > -1 ||
-                        txtUniv.toLowerCase().indexOf(filter) > -1 ||
-                        txtTeam.toLowerCase().indexOf(filter) > -1
-                    ) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
-                    }
-                }
-            }
-        }
-    </script>
 </body>
 </html>
