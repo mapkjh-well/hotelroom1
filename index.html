@@ -1,604 +1,527 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>숙소 및 방배정 안내 | 첨단소재·나노융합 혁신융합대학사업단</title>
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Noto Sans KR Webfont -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Noto Sans KR"', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
-          },
-          colors: {
-            navy: {
-              950: '#0a1931',
-              900: '#0F2547',
-              800: '#163a70',
-            },
-            royal: {
-              600: '#1D5BD6',
-              500: '#2B6CE6',
-              100: '#EBF2FF',
-              50: '#F4F8FF',
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 CO-SHOW 첨단소재나노융합 참가자 종합 안내</title>
+    <style>
+        /* 디자인 토큰 및 기본 스타일 설정 */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* 상단 헤더 배너 */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #1e4ed8, #2563eb);
+            color: white;
+            padding: 40px 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* 공통 수칙 알림 배너 */
+        .notice-banner {
+            background: #eff6ff;
+            border-left: 4px solid var(--primary);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+        .notice-banner strong {
+            color: var(--primary-dark);
+        }
+
+        /* 섹션 제목 및 그리드 레이아웃 */
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        /* 구분 배지 */
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .badge.breakfast { background: #fef3c7; color: #d97706; }
+        .badge.lunch { background: #d1fae5; color: #059669; }
+        .badge.dinner { background: #ede9fe; color: #7c3aed; }
+        .badge.hotel { background: #e0f2fe; color: #0284c7; }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+        .menu-box {
+            background: #f1f5f9;
+            padding: 10px 14px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        .info-list {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+        .info-list div {
+            margin-bottom: 4px;
+        }
+        
+        /* 지도 바로가기 버튼 그룹 */
+        .btn-group {
+            display: flex;
+            gap: 8px;
+            margin-top: auto;
+        }
+        .btn {
+            flex: 1;
+            text-align: center;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .btn-naver { background: #03c75a; color: white; }
+        .btn-naver:hover { background: #02b350; }
+        .btn-kakao { background: #fee500; color: #191919; }
+        .btn-kakao:hover { background: #fdd800; }
+
+        /* 숙박 장소 카드 */
+        .hotel-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .hotel-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--primary-dark);
+        }
+        .room-assign-notice {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            color: #b45309;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* 학생 일정 검색 및 테이블 */
+        .search-box {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .search-box input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+        }
+        .search-box input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+        th, td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:hover {
+            background: #f8fafc;
+        }
+
+        /* 모바일 반응형 대응 */
+        @media (max-width: 768px) {
+            .grid-3 {
+                grid-template-columns: 1fr !important;
             }
-          }
+            header h1 {
+                font-size: 1.6rem;
+            }
         }
-      }
-    }
-  </script>
-  <style>
-    body {
-      font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: #F4F6FA;
-      color: #1E293B;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* A4 인쇄 및 PDF 저장 최적화 */
-    @media print {
-      @page {
-        size: A4 portrait;
-        margin: 10mm;
-      }
-      body {
-        background-color: #FFFFFF !important;
-        color: #0F172A !important;
-        font-size: 11px !important;
-      }
-      .no-print {
-        display: none !important;
-      }
-      .print-break-inside-avoid {
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
-      .print-shadow-none {
-        box-shadow: none !important;
-        border: 1px solid #CBD5E1 !important;
-      }
-      .hero-gradient {
-        background: #0F2547 !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-      .badge-print {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-    }
-  </style>
+    </style>
 </head>
-<body class="min-h-screen flex flex-col">
+<body>
+    <div class="container">
+        <!-- 헤더 -->
+        <header>
+            <h1>2026 CO-SHOW 첨단소재나노융합 참가자 종합 안내</h1>
+            <p>중앙대학교 혁신융합대학사업단 | 행사 기간 식당, 숙박 및 일정 안내 페이지</p>
+        </header>
 
-  <!-- 상단 유틸리티 바: 우측 정렬 인쇄/PDF 버튼 배치 -->
-  <header class="no-print sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-end">
-      <button onclick="window.print()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white shadow-xs transition whitespace-nowrap">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
-        인쇄 / PDF 저장
-      </button>
-    </div>
-  </header>
-
-  <!-- 메인 콘텐츠 -->
-  <main class="flex-1 max-w-6xl w-full mx-auto px-4 py-6 sm:py-8 space-y-10">
-
-    <!-- ========================================================= -->
-    <!-- 히어로 배너 (상단 헤더 + 2열 균형 요약 카드) -->
-    <!-- ========================================================= -->
-    <section class="hero-gradient relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0a1931] via-[#0F2547] to-[#163a70] text-white p-6 sm:p-10 shadow-xl print-break-inside-avoid">
-      <!-- 기하학적 배경 장식 -->
-      <div class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-white/5 blur-2xl pointer-events-none"></div>
-      <div class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-royal-500/20 blur-2xl pointer-events-none"></div>
-      <div class="absolute top-8 right-12 w-36 h-36 border border-white/10 rounded-3xl rotate-12 pointer-events-none hidden sm:block"></div>
-
-      <div class="relative z-10">
-        <!-- 상단 배지 -->
-        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 text-xs sm:text-sm font-semibold tracking-wide badge-print">
-            <span class="w-2 h-2 rounded-full bg-sky-300"></span>
-            첨단소재·나노융합 혁신융합대학사업단
-          </div>
+        <!-- 공통 이용 수칙 배너 -->
+        <div class="notice-banner">
+            <strong>💡 식당 이용 공통 수칙:</strong> 식당 방문 시 <strong>'첨단소재(중앙대)'</strong>를 말씀하시고, 명부에 소속·성명을 작성한 뒤 지정 메뉴 중 택1을 이용해 주세요. (운영팀 일괄 결제)
         </div>
 
-        <!-- 메인 타이틀 및 부제 -->
-        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-snug mb-2">
-          숙소 및 방배정
-        </h1>
-        <p class="text-sky-100/90 text-sm sm:text-base font-medium mb-7">
-          광주 김대중컨벤션센터 행사 참가자 지정 숙소 위치, 이용 안내 및 지정 식당 통합 안내
-        </p>
-
-        <!-- 배너 하단 요약 카드: 균형 잡힌 2열 그리드 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 items-stretch">
-          <!-- 카드 1: 숙박 및 객실 배정 -->
-          <div class="bg-white/12 backdrop-blur-md border border-white/20 rounded-2xl p-5 sm:p-6 flex flex-col justify-between h-full">
-            <div class="flex items-center justify-between mb-3">
-              <span class="text-xs sm:text-sm font-bold text-sky-200 tracking-wide">숙박 및 객실 배정</span>
-              <span class="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center text-sky-200 shrink-0">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-              </span>
-            </div>
-            <div>
-              <div class="text-lg sm:text-2xl font-extrabold text-white tracking-tight mb-1.5">
-                에이치에비뉴호텔 (광주 상무점) · 더블룸 1인 1실 배정
-              </div>
-              <p class="text-xs sm:text-sm text-sky-100/95 font-medium">
-                체크인 시 프런트에서 본인 성함 말씀 후 즉시 객실 배정
-              </p>
-            </div>
-          </div>
-
-          <!-- 카드 2: 행사장 거리 및 이용 시간 -->
-          <div class="bg-white/12 backdrop-blur-md border border-white/20 rounded-2xl p-5 sm:p-6 flex flex-col justify-between h-full">
-            <div class="flex items-center justify-between mb-3">
-              <span class="text-xs sm:text-sm font-bold text-sky-200 tracking-wide">행사장 거리 및 이용 시간</span>
-              <span class="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center text-sky-200 shrink-0">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              </span>
-            </div>
-            <div>
-              <div class="text-lg sm:text-2xl font-extrabold text-white tracking-tight mb-1.5">
-                김대중컨벤션센터 도보 약 19분 (차량 약 5분)
-              </div>
-              <p class="text-xs sm:text-sm text-sky-100/95 font-medium">
-                체크인 15:00 이후 / 체크아웃 11:00 이전
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================= -->
-    <!-- 섹션 01. 숙소 위치 및 객실 상세 안내 -->
-    <!-- ========================================================= -->
-    <section id="section-hotel" class="space-y-4 scroll-mt-20 print-break-inside-avoid">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center gap-2.5">
-          <span class="w-1.5 h-6 rounded-full bg-royal-600"></span>
-          <h2 class="text-xl sm:text-2xl font-extrabold text-navy-900">01. 숙소 위치 및 객실 상세 안내</h2>
-        </div>
-        <span class="text-xs font-semibold text-slate-500">H-AVENUE HOTEL</span>
-      </div>
-
-      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden print-shadow-none">
-        <!-- 호텔 헤더 바 -->
-        <div class="p-5 sm:p-6 border-b border-slate-200 flex flex-wrap items-center justify-between gap-3 bg-gradient-to-r from-royal-50 to-white">
-          <div class="flex flex-wrap items-center gap-3">
-            <span class="px-4 py-1.5 rounded-full bg-royal-600 text-white text-sm sm:text-base font-extrabold tracking-tight shadow-xs badge-print">
-              에이치에비뉴호텔 (광주 상무점)
-            </span>
-            <span class="text-sm sm:text-base font-bold text-navy-900">
-              ※ 더블룸 - 1인 1실 배정
-            </span>
-          </div>
-        </div>
-
-        <!-- 2열 상세 사양 표 (구분 | 내용) -->
-        <div class="divide-y divide-slate-200 text-sm sm:text-base">
-          <!-- 테이블 헤더 -->
-          <div class="grid grid-cols-12 bg-slate-100/90 font-bold text-slate-600 text-xs sm:text-sm">
-            <div class="col-span-4 sm:col-span-3 md:col-span-2 py-3 px-4 text-center border-r border-slate-200">구분</div>
-            <div class="col-span-8 sm:col-span-9 md:col-span-10 py-3 px-5">내용</div>
-          </div>
-
-          <!-- 호텔명 -->
-          <div class="grid grid-cols-12 items-center">
-            <div class="col-span-4 sm:col-span-3 md:col-span-2 py-4 px-4 text-center font-bold text-slate-700 bg-slate-50/80 border-r border-slate-200 h-full flex items-center justify-center">
-              호텔명
-            </div>
-            <div class="col-span-8 sm:col-span-9 md:col-span-10 py-3.5 px-5 font-extrabold text-navy-900">
-              에이치에비뉴호텔 (광주 상무점)
-            </div>
-          </div>
-
-          <!-- 객실 타입 -->
-          <div class="grid grid-cols-12 items-center">
-            <div class="col-span-4 sm:col-span-3 md:col-span-2 py-4 px-4 text-center font-bold text-slate-700 bg-slate-50/80 border-r border-slate-200 h-full flex items-center justify-center">
-              객실 타입
-            </div>
-            <div class="col-span-8 sm:col-span-9 md:col-span-10 py-3.5 px-5 font-bold text-slate-800">
-              더블룸 <span class="text-xs sm:text-sm font-semibold text-royal-600 ml-1">(전 인원 1인 1실 배정)</span>
-            </div>
-          </div>
-
-          <!-- 도로명 주소 + 지도/복사 버튼 -->
-          <div class="grid grid-cols-12 items-center">
-            <div class="col-span-4 sm:col-span-3 md:col-span-2 py-4 px-4 text-center font-bold text-slate-700 bg-slate-50/80 border-r border-slate-200 h-full flex items-center justify-center">
-              도로명 주소
-            </div>
-            <div class="col-span-8 sm:col-span-9 md:col-span-10 py-3.5 px-5 flex flex-wrap items-center justify-between gap-3">
-              <span id="hotelAddressText" class="font-bold text-slate-900">광주 서구 시청로20번길 21-6</span>
-              <div class="no-print flex flex-wrap items-center gap-2">
-                <button onclick="copyAddress('광주 서구 시청로20번길 21-6')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 transition">
-                  <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-                  주소 복사
-                </button>
-                <a href="https://map.naver.com/p/search/광주%20서구%20시청로20번길%2021-6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-[#03C75A] hover:opacity-90 text-white transition">
-                  네이버지도 ↗
-                </a>
-                <a href="https://map.kakao.com/?q=광주%20서구%20시청로20번길%2021-6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-[#FEE500] hover:opacity-90 text-[#191919] transition">
-                  카카오맵 ↗
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 행사장 접근성 -->
-          <div class="grid grid-cols-12 items-center">
-            <div class="col-span-4 sm:col-span-3 md:col-span-2 py-4 px-4 text-center font-bold text-slate-700 bg-slate-50/80 border-r border-slate-200 h-full flex items-center justify-center">
-              행사장 접근성
-            </div>
-            <div class="col-span-8 sm:col-span-9 md:col-span-10 py-3.5 px-5 flex flex-wrap items-center gap-2">
-              <span class="font-bold text-royal-600">광주 김대중컨벤션센터까지 도보 약 19분 소요</span>
-              <span class="text-xs sm:text-sm text-slate-500 font-medium">(차량 약 5분)</span>
-            </div>
-          </div>
-
-          <!-- 체크인 / 체크아웃 -->
-          <div class="grid grid-cols-12 items-center">
-            <div class="col-span-4 sm:col-span-3 md:col-span-2 py-4 px-4 text-center font-bold text-slate-700 bg-slate-50/80 border-r border-slate-200 h-full flex items-center justify-center">
-              체크인 / 체크아웃
-            </div>
-            <div class="col-span-8 sm:col-span-9 md:col-span-10 py-3.5 px-5 flex flex-wrap items-center gap-x-5 gap-y-1.5 text-sm">
-              <span class="inline-flex items-center gap-1.5 font-semibold text-slate-800">
-                <span class="w-2 h-2 rounded-full bg-royal-600"></span>
-                체크인 <strong class="text-navy-900">15:00 이후</strong>
-                <span class="text-royal-600 font-bold">(프런트에서 본인 성함 확인 후 객실 배정)</span>
-              </span>
-              <span class="inline-flex items-center gap-1.5 font-semibold text-slate-800">
-                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
-                체크아웃 <strong class="text-navy-900">11:00 이전</strong>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================= -->
-    <!-- 섹션 02. 식사 및 지정 식당 안내 (조·중·석) -->
-    <!-- ========================================================= -->
-    <section id="section-dining" class="space-y-5 scroll-mt-20">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
-        <div class="flex items-center gap-2.5">
-          <span class="w-1.5 h-6 rounded-full bg-royal-600"></span>
-          <h2 class="text-xl sm:text-2xl font-extrabold text-navy-900">02. 식사 및 지정 식당 안내 (조·중·석)</h2>
-        </div>
-        <p class="text-xs sm:text-sm text-slate-500 font-medium">
-          ※ 모든 거리는 김대중컨벤션센터 기준입니다.
-        </p>
-      </div>
-
-      <!-- 지정 식당 공통 이용 방법 배너 -->
-      <div class="bg-gradient-to-r from-[#0F172A] to-[#1E3A8A] text-white rounded-2xl p-5 sm:p-7 shadow-lg border border-blue-800/50 print-break-inside-avoid">
-        <div class="flex items-center gap-2.5 mb-4">
-          <span class="px-2.5 py-1 rounded-lg bg-amber-400 text-slate-950 text-xs font-extrabold badge-print">필독</span>
-          <h3 class="text-base sm:text-lg font-bold">지정 식당 공통 이용 방법 (운영팀 일괄 결제)</h3>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="bg-white/10 border border-white/15 rounded-xl p-4 flex items-start gap-3">
-            <div class="w-7 h-7 rounded-full bg-royal-600 text-white font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5 badge-print">1</div>
-            <div>
-              <div class="font-bold text-sm text-blue-200 mb-1">소속 말씀하기</div>
-              <p class="text-xs text-slate-100 leading-relaxed">
-                식당 방문 후 직원에게 <strong class="text-amber-300">'첨단소재(중앙대)'</strong>라고 말씀해주세요.
-              </p>
-            </div>
-          </div>
-          <div class="bg-white/10 border border-white/15 rounded-xl p-4 flex items-start gap-3">
-            <div class="w-7 h-7 rounded-full bg-royal-600 text-white font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5 badge-print">2</div>
-            <div>
-              <div class="font-bold text-sm text-blue-200 mb-1">방문 명부 작성</div>
-              <p class="text-xs text-slate-100 leading-relaxed">
-                비치된 방문 명부에 <strong>본인의 소속(대학)과 성명</strong>을 정확히 기재합니다.
-              </p>
-            </div>
-          </div>
-          <div class="bg-white/10 border border-white/15 rounded-xl p-4 flex items-start gap-3">
-            <div class="w-7 h-7 rounded-full bg-royal-600 text-white font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5 badge-print">3</div>
-            <div>
-              <div class="font-bold text-sm text-blue-200 mb-1">지정 메뉴 택1 주문</div>
-              <p class="text-xs text-slate-100 leading-relaxed">
-                식당별 지정된 <strong>메뉴 2종 중 1가지를 선택</strong>하여 주문합니다.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 조·중·석식 필터 탭 -->
-      <div class="no-print flex flex-wrap items-center gap-2">
-        <button onclick="filterRestaurants('all')" data-meal="all" class="meal-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-bold bg-royal-600 text-white shadow-sm transition-all">
-          전체 식당 (7곳)
-        </button>
-        <button onclick="filterRestaurants('breakfast')" data-meal="breakfast" class="meal-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition-all">
-          ☀️ 조식 (1곳)
-        </button>
-        <button onclick="filterRestaurants('lunch')" data-meal="lunch" class="meal-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition-all">
-          🌤️ 중식 (3곳)
-        </button>
-        <button onclick="filterRestaurants('dinner')" data-meal="dinner" class="meal-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition-all">
-          🌙 석식 (3곳)
-        </button>
-      </div>
-
-      <!-- 지정 식당 7곳 카드 그리드 -->
-      <div id="restaurant-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <!-- JavaScript로 7개 지정 식당 렌더링 -->
-      </div>
-    </section>
-
-    <!-- ========================================================= -->
-    <!-- 섹션 03. 숙소 이용 안내 및 유의사항 -->
-    <!-- ========================================================= -->
-    <section id="section-notice" class="space-y-4 scroll-mt-20 print-break-inside-avoid">
-      <div class="flex items-center gap-2.5">
-        <span class="w-1.5 h-6 rounded-full bg-royal-600"></span>
-        <h2 class="text-xl sm:text-2xl font-extrabold text-navy-900">03. 숙소 이용 안내 및 유의사항</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- 카드 1: 체크인 및 객실 배정 안내 -->
-        <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm print-shadow-none flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-2.5 mb-3">
-              <span class="w-8 h-8 rounded-xl bg-royal-100 text-royal-600 flex items-center justify-center font-extrabold text-sm badge-print">1</span>
-              <h3 class="font-extrabold text-navy-900 text-sm sm:text-base">체크인 및 객실 배정 안내</h3>
-            </div>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              호텔 프런트 데스크에서 체크인 시 <strong>본인 성함</strong>을 말씀해 주시면 사전 예약 명단 확인 후 즉시 객실을 배정해 드립니다. (전 인원 더블룸 1인 1실 배정 / 체크인 15:00 이후)
-            </p>
-          </div>
-        </div>
-
-        <!-- 카드 2: 체크아웃 시간 준수 -->
-        <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm print-shadow-none flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-2.5 mb-3">
-              <span class="w-8 h-8 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-extrabold text-sm badge-print">2</span>
-              <h3 class="font-extrabold text-navy-900 text-sm sm:text-base">체크아웃 시간 준수</h3>
-            </div>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              퇴실 시간은 <strong>오전 11:00 이전</strong>입니다. 원활한 객실 정산을 위해 프런트에 객실 키를 반납해 주시기 바랍니다.
-            </p>
-          </div>
-        </div>
-
-        <!-- 카드 3: 전 객실 1인실 운영 및 금연 안내 -->
-        <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm print-shadow-none flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-2.5 mb-3">
-              <span class="w-8 h-8 rounded-xl bg-navy-900/10 text-navy-900 flex items-center justify-center font-extrabold text-sm badge-print">3</span>
-              <h3 class="font-extrabold text-navy-900 text-sm sm:text-base">전 객실 1인실 운영 및 금연 안내</h3>
-            </div>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              쾌적한 투숙 환경을 위해 전 객실 <strong>1인 1실</strong>로 운영되며, 호텔 내 전 구역은 <strong>금연</strong>입니다.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- 푸터 -->
-  <footer class="bg-navy-950 text-slate-400 py-6 px-4 text-center text-xs mt-10">
-    <div class="max-w-6xl mx-auto">
-      <p class="font-bold text-slate-200">첨단소재·나노융합 혁신융합대학사업단 | 숙소 및 방배정 안내</p>
-    </div>
-  </footer>
-
-  <!-- 복사 완료 알림 토스트 -->
-  <div id="toastNotification" class="no-print fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-navy-900 text-white px-5 py-3 rounded-xl shadow-xl border border-white/15 text-xs sm:text-sm font-bold flex items-center gap-2">
-    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-    <span id="toastMessage">주소가 클립보드에 복사되었습니다.</span>
-  </div>
-
-  <!-- 데이터 및 인터랙션 스크립트 -->
-  <script>
-    // 지정 식당 7곳 데이터 (조식 1곳 · 중식 3곳 · 석식 3곳)
-    const restaurantsData = [
-      {
-        id: 1,
-        mealType: 'breakfast',
-        mealLabel: '조식',
-        badgeColor: 'bg-amber-100 text-amber-800 border-amber-200',
-        name: '브로샌드위치',
-        menuA: '햄치즈에그 샌드위치',
-        menuB: '크랜베리 닭가슴살 샌드위치',
-        distance: '도보 15분 (985m)',
-        address: '광주 서구 치평로 2, 1층 104호',
-        phone: '0507-1498-2577',
-        point: '샌드위치 2종 중 택1 주문 가능'
-      },
-      {
-        id: 2,
-        mealType: 'lunch',
-        mealLabel: '중식',
-        badgeColor: 'bg-orange-100 text-orange-800 border-orange-200',
-        name: '맛과향',
-        menuA: '비빔밥',
-        menuB: '제육볶음',
-        distance: '도보 9분 (634m)',
-        address: '광주 서구 상무공원로 33, 상가동 1층 110~111호',
-        phone: '062-372-9100',
-        point: '제육볶음은 2인 이상 주문 가능 / 점심시간 혼잡 시 시간 분산 방문'
-      },
-      {
-        id: 3,
-        mealType: 'lunch',
-        mealLabel: '중식',
-        badgeColor: 'bg-orange-100 text-orange-800 border-orange-200',
-        name: '일담',
-        menuA: '수제 생 등심 돈카츠',
-        menuB: '규동',
-        distance: '도보 8분 (507m)',
-        address: '광주 서구 상무화원로17번길 1, 1층',
-        phone: '062-381-3788',
-        point: '일요일 정기휴무 (행사 기간 정상 영업)'
-      },
-      {
-        id: 4,
-        mealType: 'lunch',
-        mealLabel: '중식',
-        badgeColor: 'bg-orange-100 text-orange-800 border-orange-200',
-        name: '짬뽕회관 상무점',
-        menuA: '대박짬뽕',
-        menuB: '순두부짬뽕밥',
-        distance: '도보 10분 (666m)',
-        address: '광주 서구 상무공원로 1, 1층',
-        phone: '0507-1379-6632',
-        point: '11월 18일(수) 타 단체 예약으로 혼잡 예상'
-      },
-      {
-        id: 5,
-        mealType: 'dinner',
-        mealLabel: '석식',
-        badgeColor: 'bg-indigo-100 text-indigo-800 border-indigo-200',
-        name: '기호식품',
-        menuA: '육개장',
-        menuB: '순대국밥',
-        distance: '도보 29분 (1.8km)',
-        address: '광주 서구 상무번영로 12',
-        phone: '062-375-9882',
-        point: '24시간 영업'
-      },
-      {
-        id: 6,
-        mealType: 'dinner',
-        mealLabel: '석식',
-        badgeColor: 'bg-indigo-100 text-indigo-800 border-indigo-200',
-        name: '탄쇼',
-        menuA: '연어덮밥',
-        menuB: '튀김덮밥',
-        distance: '도보 30분 (1.9km)',
-        address: '광주 서구 상무자유로 174, 1층',
-        phone: '062-384-8873',
-        point: '이용 가능 여부 확인 중 (방문 전 확인 권장)'
-      },
-      {
-        id: 7,
-        mealType: 'dinner',
-        mealLabel: '석식',
-        badgeColor: 'bg-indigo-100 text-indigo-800 border-indigo-200',
-        name: '홍익궁중전통육개장 상무점',
-        menuA: '전통육개장',
-        menuB: '전통닭개장',
-        distance: '도보 31분 (1.9km)',
-        address: '광주 서구 상무연하로 60, 1층',
-        phone: '062-376-3030',
-        point: '11월 21일(토) 휴무'
-      }
-    ];
-
-    // 지정 식당 카드 렌더링
-    function renderRestaurants(mealFilter = 'all') {
-      const grid = document.getElementById('restaurant-grid');
-      const filtered = mealFilter === 'all'
-        ? restaurantsData
-        : restaurantsData.filter(item => item.mealType === mealFilter);
-
-      grid.innerHTML = filtered.map(r => {
-        const naverUrl = `https://map.naver.com/p/search/${encodeURIComponent(r.address)}`;
-        const kakaoUrl = `https://map.kakao.com/link/search/${encodeURIComponent(r.address)}`;
-        return `
-          <article class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden print-shadow-none print-break-inside-avoid">
-            <div class="p-5 sm:p-6">
-              <div class="flex items-center justify-between gap-2 mb-3">
-                <span class="px-2.5 py-1 rounded-lg text-xs font-extrabold border ${r.badgeColor} badge-print">${r.mealLabel} 지정</span>
-                <span class="text-xs font-bold text-slate-600 bg-slate-100 px-2.5 py-1 rounded-lg">
-                  🚶 ${r.distance}
-                </span>
-              </div>
-              <h3 class="text-lg sm:text-xl font-extrabold text-navy-900 mb-4">${r.name}</h3>
-              <div class="bg-slate-50 rounded-xl p-3.5 border border-slate-200/70 mb-4">
-                <div class="text-[11px] font-extrabold text-royal-600 uppercase tracking-wider mb-2">지정 메뉴 (2종 중 택1)</div>
-                <div class="space-y-1.5 text-xs sm:text-sm">
-                  <div class="flex items-center gap-2"><span class="px-1.5 py-0.5 rounded bg-royal-600 text-white text-[10px] font-extrabold badge-print">메뉴 A</span><span class="font-bold text-slate-800">${r.menuA}</span></div>
-                  <div class="flex items-center gap-2"><span class="px-1.5 py-0.5 rounded bg-slate-700 text-white text-[10px] font-extrabold badge-print">메뉴 B</span><span class="font-bold text-slate-800">${r.menuB}</span></div>
+        <!-- 조식 섹션 (1곳) -->
+        <section>
+            <h2>🍳 조식 안내 (1곳)</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div>
+                        <span class="badge breakfast">조식 지정</span>
+                        <h3>브로샌드위치</h3>
+                        <div class="menu-box"><strong>지정 메뉴:</strong> 햄치즈에그 / 크랜베리 닭가슴살 (택1)</div>
+                        <div class="info-list">
+                            <div>📍 광주 서구 치평로 2, 1층 104호</div>
+                            <div>📞 0507-1498-2577</div>
+                            <div>🚶 행사장 기준 도보 약 15분 (985m)</div>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://map.naver.com/p/search/%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%B9%98%ED%8F%89%EB%A1%9C%202" target="_blank" rel="noopener noreferrer" class="btn btn-naver">네이버 지도</a>
+                        <a href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%B9%98%ED%8F%89%EB%A1%9C%202" target="_blank" rel="noopener noreferrer" class="btn btn-kakao">카카오 지도</a>
+                    </div>
                 </div>
-              </div>
-              <div class="flex items-start gap-2 text-xs text-slate-700 bg-royal-50/80 rounded-xl p-3 mb-4 border border-royal-100">
-                <span class="text-royal-600 font-extrabold shrink-0">ⓘ</span>
-                <span class="font-medium leading-relaxed">${r.point}</span>
-              </div>
-              <div class="space-y-1.5 text-xs text-slate-600">
-                <div class="flex items-start gap-2"><span class="text-slate-400 shrink-0">📍</span><span>${r.address}</span></div>
-                <div class="flex items-center gap-2"><span class="text-slate-400 shrink-0">📞</span><a href="tel:${r.phone}" class="hover:text-royal-600 font-semibold">${r.phone}</a></div>
-              </div>
             </div>
-            <div class="no-print px-5 py-3.5 bg-slate-50 border-t border-slate-100 flex items-center gap-2">
-              <button onclick="copyAddress('${r.address}')" class="flex-1 py-2 px-2.5 rounded-xl bg-white border border-slate-200 hover:border-royal-600 text-slate-700 hover:text-royal-600 text-xs font-bold transition-colors flex items-center justify-center gap-1">
-                주소 복사
-              </button>
-              <a href="${naverUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 px-2.5 rounded-xl bg-[#03C75A] hover:opacity-90 text-white text-xs font-bold flex items-center justify-center gap-1">
-                <span class="font-extrabold">N</span> 네이버
-              </a>
-              <a href="${kakaoUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 px-2.5 rounded-xl bg-[#FEE500] hover:opacity-90 text-[#191919] text-xs font-bold flex items-center justify-center gap-1">
-                카카오
-              </a>
-            </div>
-          </article>
-        `;
-      }).join('');
-    }
+        </section>
 
-    // 조·중·석식 필터 전환
-    function filterRestaurants(mealType) {
-      document.querySelectorAll('.meal-filter-btn').forEach(btn => {
-        if (btn.dataset.meal === mealType) {
-          btn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200', 'font-semibold');
-          btn.classList.add('bg-royal-600', 'text-white', 'shadow-sm', 'font-bold');
-        } else {
-          btn.classList.remove('bg-royal-600', 'text-white', 'shadow-sm', 'font-bold');
-          btn.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200', 'font-semibold');
+        <!-- 중식 섹션 (3곳 - 수정식당 반영) -->
+        <section>
+            <h2>🍱 중식 안내 (3곳)</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div>
+                        <span class="badge lunch">중식 지정</span>
+                        <h3>가마솥우정설렁탕갈비탕</h3>
+                        <div class="menu-box"><strong>지정 메뉴:</strong> 설렁탕 / 갈비탕 (택1)</div>
+                        <div class="info-list">
+                            <div>📍 전남광주 서구 상무화원로11번길 4</div>
+                            <div>📞 062-381-8225</div>
+                            <div>🚶 도보 약 2분 (170m)</div>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://map.naver.com/p/search/%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%ED%99%94%EC%9B%90%EB%A1%9C11%EB%B2%88%EA%B8%B8%204" target="_blank" rel="noopener noreferrer" class="btn btn-naver">네이버 지도</a>
+                        <a href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%ED%99%94%EC%9B%90%EB%A1%9C11%EB%B2%88%EA%B8%B8%204" target="_blank" rel="noopener noreferrer" class="btn btn-kakao">카카오 지도</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="badge lunch">중식 지정</span>
+                        <h3>일담</h3>
+                        <div class="menu-box"><strong>지정 메뉴:</strong> 수제 생 등심 돈카츠 / 규동 (택1)<br><small style="color:#d97706;">※ 일요일 정기휴무</small></div>
+                        <div class="info-list">
+                            <div>📍 광주 서구 상무화원로17번길 1, 1층</div>
+                            <div>📞 062-381-3788</div>
+                            <div>🚶 도보 약 8분 (507m)</div>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://map.naver.com/p/search/%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%ED%99%94%EC%9B%90%EB%A1%9C17%EB%B2%88%EA%B8%B8%201" target="_blank" rel="noopener noreferrer" class="btn btn-naver">네이버 지도</a>
+                        <a href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%ED%99%94%EC%9B%90%EB%A1%9C17%EB%B2%88%EA%B8%B8%201" target="_blank" rel="noopener noreferrer" class="btn btn-kakao">카카오 지도</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="badge lunch">중식 지정</span>
+                        <h3>짬뽕회관 상무점</h3>
+                        <div class="menu-box"><strong>지정 메뉴:</strong> 대박짬뽕 / 순두부짬뽕밥 (택1)<br><small style="color:#d97706;">※ 18일 11시·12시 타 단체 예약으로 혼잡 주의</small></div>
+                        <div class="info-list">
+                            <div>📍 광주 서구 상무공원로 1, 1층</div>
+                            <div>📞 0507-1379-6632</div>
+                            <div>🚶 도보 약 10분 (666m)</div>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://map.naver.com/p/search/%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%EA%B3%B5%EC%9B%90%EB%A1%9C%201" target="_blank" rel="noopener noreferrer" class="btn btn-naver">네이버 지도</a>
+                        <a href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%EA%B3%B5%EC%9B%90%EB%A1%9C%201" target="_blank" rel="noopener noreferrer" class="btn btn-kakao">카카오 지도</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 석식 섹션 (3곳 - 수정식당 반영) -->
+        <section>
+            <h2>🍲 석식 안내 (3곳)</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div>
+                        <span class="badge dinner">석식 지정</span>
+                        <h3>기호식품</h3>
+                        <div class="menu-box"><strong>지정 메뉴:</strong> 육개장 / 순대국밥 (택1)<br><small style="color:#059669;">※ 24시간 영업</small></div>
+                        <div class="info-list">
+                            <div>📍 광주 서구 상무번영로 12</div>
+                            <div>📞 062-375-9882</div>
+                            <div>🚶 도보 약 29분 (1.8km)</div>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://map.naver.com/p/search/%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%EB%B2%88%EC%98%81%EB%A1%9C%2012" target="_blank" rel="noopener noreferrer" class="btn btn-naver">네이버 지도</a>
+                        <a href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%EB%B2%88%EC%98%81%EB%A1%9C%2012" target="_blank" rel="noopener noreferrer" class="btn btn-kakao">카카오 지도</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="badge dinner">석식 지정</span>
+                        <h3>멘야마쯔리상무점</h3>
+                        <div class="menu-box"><strong>지정 메뉴:</strong> 라멘 / 마제소바 (택1)</div>
+                        <div class="info-list">
+                            <div>📍 전남광주 서구 시청로 57 1층 멘야마쯔리</div>
+                            <div>📞 0507-1341-1988</div>
+                            <div>🚶 도보 약 25분 (1.7km)</div>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://map.naver.com/p/search/%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%8B%9C%EC%B2%AD%EB%A1%9C%2057" target="_blank" rel="noopener noreferrer" class="btn btn-naver">네이버 지도</a>
+                        <a href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%8B%9C%EC%B2%AD%EB%A1%9C%2057" target="_blank" rel="noopener noreferrer" class="btn btn-kakao">카카오 지도</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="badge dinner">석식 지정</span>
+                        <h3>홍익궁중전통육개장 상무점</h3>
+                        <div class="menu-box"><strong>지정 메뉴:</strong> 전통육개장 / 전통닭개장 (택1)<br><small style="color:#d97706;">※ 21일 휴무 주의</small></div>
+                        <div class="info-list">
+                            <div>📍 광주 서구 상무연하로 60, 1층</div>
+                            <div>📞 062-376-3030</div>
+                            <div>🚶 도보 약 31분 (1.9km)</div>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://map.naver.com/p/search/%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%EC%97%B0%ED%95%98%EB%A1%9C%2060" target="_blank" rel="noopener noreferrer" class="btn btn-naver">네이버 지도</a>
+                        <a href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%83%81%EB%AC%B4%EC%97%B0%ED%95%98%EB%A1%9C%2060" target="_blank" rel="noopener noreferrer" class="btn btn-kakao">카카오 지도</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 숙박 장소 섹션 -->
+        <section>
+            <h2>🏨 지정 숙박 장소 안내</h2>
+            <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));">
+                <div class="hotel-card">
+                    <span class="badge hotel">숙소 1</span>
+                    <h3>호텔 란타나</h3>
+                    <div class="info-list" style="margin-top: 10px;">
+                        <div>📍 전남광주 서구 상무평화로 130</div>
+                        <div>🚶 행사장까지 도보 약 15분</div>
+                        <div>🛏️ 객실 유형: 더블룸 · 1인실 기준</div>
+                        <div>⏰ 체크인: 16시 이후 (짐 사전 보관 가능)</div>
+                    </div>
+                    <div class="room-assign-notice">
+                        ※ 객실 방 배정은 당일 현장 배정됩니다. (체크인 시 운영진 안내)
+                    </div>
+                </div>
+
+                <div class="hotel-card">
+                    <span class="badge hotel">숙소 2</span>
+                    <h3>호텔 얌</h3>
+                    <div class="info-list" style="margin-top: 10px;">
+                        <div>📍 전남광주 서구 상무평화로 150</div>
+                        <div>🚶 행사장까지 도보 약 19분</div>
+                        <div>🛏️ 객실 유형: 더블룸 · 1인실 기준</div>
+                        <div>⏰ 체크인: 16시 이후 (짐 사전 보관 가능)</div>
+                    </div>
+                    <div class="room-assign-notice">
+                        ※ 객실 방 배정은 당일 현장 배정됩니다. (체크인 시 운영진 안내)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 학생별 일정 및 숙소 조회 섹션 -->
+        <section>
+            <h2>👥 참가학생별 숙박 일정 및 지정 호텔 조회</h2>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="학생 성명, 소속 대학 또는 팀명으로 검색하세요 (예: 조현준, 한남대학교, ANSIM)..." onkeyup="filterTable()">
+            </div>
+            <div class="table-responsive">
+                <table id="studentTable">
+                    <thead>
+                        <tr>
+                            <th>성명</th>
+                            <th>소속 대학</th>
+                            <th>팀명</th>
+                            <th>숙박 일정</th>
+                            <th>지정 호텔 / 호실</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>조현준</td><td>한남대학교</td><td>ANSIM</td><td>2박 3일</td><td>얌호텔1</td></tr>
+                        <tr><td>홍현택</td><td>한남대학교</td><td>ANSIM</td><td>2박 3일</td><td>얌호텔2</td></tr>
+                        <tr><td>이민경</td><td>한국기술교육대학교</td><td>OWNWAY</td><td>2박 3일</td><td>얌호텔3</td></tr>
+                        <tr><td>여환철</td><td>인천대학교</td><td>OWNWAY</td><td>2박 3일</td><td>얌호텔4</td></tr>
+                        <tr><td>명채은</td><td>명지대학교</td><td>OWNWAY</td><td>2박 3일</td><td>얌호텔5</td></tr>
+                        <tr><td>이선우</td><td>한국기술교욱대학교</td><td>OWNWAY</td><td>2박 3일</td><td>얌호텔6</td></tr>
+                        <tr><td>이상현</td><td>부산대학교</td><td>Rainmate</td><td>2박 3일</td><td>얌호텔7</td></tr>
+                        <tr><td>유서연</td><td>명지대학교 자연캠퍼스</td><td>Rainmate</td><td>1박 2일</td><td>얌호텔8</td></tr>
+                        <tr><td>김나연</td><td>명지대학교</td><td>Rainmate</td><td>1박 2일</td><td>얌호텔9</td></tr>
+                        <tr><td>한영균</td><td>중앙대</td><td>ResQ4U</td><td>1박 2일</td><td>얌호텔10</td></tr>
+                        <tr><td>김성은</td><td>인천대학교</td><td>Seeme</td><td>2박 3일</td><td>얌호텔11</td></tr>
+                        <tr><td>문광민</td><td>부산대학교</td><td>Seeme</td><td>1박 2일</td><td>얌호텔12</td></tr>
+                        <tr><td>유준서</td><td>한남대학교</td><td>Vanguard</td><td>2박 3일</td><td>얌호텔13</td></tr>
+                        <tr><td>공우석</td><td>한남대학교</td><td>Vanguard</td><td>2박 3일</td><td>얌호텔14</td></tr>
+                        <tr><td>주명로</td><td>한남대학교</td><td>Vanguard</td><td>2박 3일</td><td>얌호텔15</td></tr>
+                        <tr><td>박승훈</td><td>강원대학교</td><td>네이처</td><td>1박 2일</td><td>얌호텔16</td></tr>
+                        <tr><td>엄예진</td><td>강원대학교</td><td>네이처</td><td>1박 2일</td><td>얌호텔17</td></tr>
+                        <tr><td>박성균</td><td>강원대학교</td><td>네이처</td><td>1박 2일</td><td>얌호텔18</td></tr>
+                        <tr><td>박준형</td><td>연세대학교 미래캠퍼스</td><td>땅땅땅</td><td>2박 3일</td><td>얌호텔19</td></tr>
+                        <tr><td>박준우</td><td>한국기술교육대학교</td><td>땅땅땅</td><td>2박 3일</td><td>얌호텔20</td></tr>
+                        <tr><td>이우철</td><td>연세대학교 미래캠퍼스</td><td>땅땅땅</td><td>2박 3일</td><td>얌호텔21</td></tr>
+                        <tr><td>유지연</td><td>한국기술교육대학교</td><td>땅땅땅</td><td>2박 3일</td><td>얌호텔22</td></tr>
+                        <tr><td>강남원</td><td>한국기술교육대학교</td><td>땅땅땅</td><td>1박 2일</td><td>얌호텔23</td></tr>
+                        <tr><td>방기현</td><td>중앙대학교</td><td>리마인두</td><td>1박 2일</td><td>얌호텔24</td></tr>
+                        <tr><td>이시형</td><td>중앙대학교</td><td>리마인두</td><td>1박 2일</td><td>얌호텔25</td></tr>
+                        <tr><td>이시형</td><td>연세대학교 미래캠퍼스</td><td>뽀송뽀송</td><td>1박 2일</td><td>얌호텔26</td></tr>
+                        <tr><td>김주황</td><td>강원대학교</td><td>스파크</td><td>2박 3일</td><td>얌호텔27</td></tr>
+                        <tr><td>김민재</td><td>강원대학교</td><td>커피박의 대반전</td><td>1박 2일</td><td>란타나1</td></tr>
+                        <tr><td>엄지호</td><td>강원대</td><td>커피박의 대반전</td><td>1박 2일</td><td>란타나2</td></tr>
+                        <tr><td>배성준</td><td>강원대학교</td><td>커피박의 대반전</td><td>1박 2일</td><td>란타나3</td></tr>
+                        <tr><td>박현민</td><td>숭실대학교</td><td>홀맨</td><td>2박 3일</td><td>란타나4</td></tr>
+                        <tr><td>조민재</td><td>홍익대학교</td><td>홀맨</td><td>2박 3일</td><td>란타나5</td></tr>
+                        <tr><td>최강</td><td>한국기술교육대학교</td><td>홀맨</td><td>1박 2일</td><td>란타나6</td></tr>
+                        <tr><td>박도현</td><td>한국기술교육대학교</td><td>홀맨</td><td>1박 2일</td><td>란타나7</td></tr>
+                        <tr><td>신종화</td><td>중앙대학교</td><td>홀인원</td><td>2박 3일</td><td>란타나8</td></tr>
+                        <tr><td>성기민</td><td>한밭대학교</td><td>Rain:on</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
+                        <tr><td>이한서</td><td>한남대학교</td><td>RAIN:ON</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
+                        <tr><td>이병렬</td><td>한남대학교</td><td>RAIN:ON</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
+                        <tr><td>임채훈</td><td>한남대학교</td><td>RAIN:ON</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
+                        <tr><td>박해미</td><td>한남대학교</td><td>RAIN:ON</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
+                        <tr><td>조지운</td><td>중앙대학교</td><td>ResQ4U</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
+                        <tr><td>황지민</td><td>경북대학교</td><td>ResQ4U</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
+                        <tr><td>김태호</td><td>숭실대학교</td><td>resQ4U</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
+                        <tr><td>노현주</td><td>명지대학교</td><td>ResQ4U</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
+                        <tr><td>선민정</td><td>중앙대학교</td><td>리마인두</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
+                        <tr><td>류세영</td><td>공과대학</td><td>리마인두</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
+                        <tr><td>김산들</td><td>숭실대학교</td><td>뽀송뽀송</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
+                        <tr><td>조영유</td><td>숭실대학교</td><td>뽀송뽀송</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
+                        <tr><td>임동균</td><td>중앙대학교</td><td>홀인원</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
+                        <tr><td>위정훈</td><td>중앙대학교</td><td>홀인원</td><td>0박 1일</td><td>숙박 제외 (당일 참가)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <!-- 실시간 검색 필터 스크립트 -->
+    <script>
+        function filterTable() {
+            const input = document.getElementById("searchInput");
+            const filter = input.value.toLowerCase();
+            const table = document.getElementById("studentTable");
+            const tr = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < tr.length; i++) {
+                const tdName = tr[i].getElementsByTagName("td")[0];
+                const tdUniv = tr[i].getElementsByTagName("td")[1];
+                const tdTeam = tr[i].getElementsByTagName("td")[2];
+                if (tdName || tdUniv || tdTeam) {
+                    const txtName = tdName.textContent || tdName.innerText;
+                    const txtUniv = tdUniv.textContent || tdUniv.innerText;
+                    const txtTeam = tdTeam.textContent || tdTeam.innerText;
+                    if (
+                        txtName.toLowerCase().indexOf(filter) > -1 ||
+                        txtUniv.toLowerCase().indexOf(filter) > -1 ||
+                        txtTeam.toLowerCase().indexOf(filter) > -1
+                    ) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
         }
-      });
-      renderRestaurants(mealType);
-    }
-
-    // 주소 복사 (iFrame 호환 execCommand 지원)
-    function copyAddress(address) {
-      const targetAddress = address || document.getElementById('hotelAddressText').innerText;
-      const tempInput = document.createElement('textarea');
-      tempInput.value = targetAddress;
-      document.body.appendChild(tempInput);
-      tempInput.select();
-      try {
-        document.execCommand('copy');
-        showToast('주소가 복사되었습니다: ' + targetAddress);
-      } catch (err) {
-        showToast('주소 복사 중 오류가 발생했습니다.');
-      }
-      document.body.removeChild(tempInput);
-    }
-
-    // 토스트 알림 표시
-    let toastTimer = null;
-    function showToast(msg) {
-      const toast = document.getElementById('toastNotification');
-      const toastMsg = document.getElementById('toastMessage');
-      toastMsg.textContent = msg;
-      toast.classList.remove('hidden');
-      if (toastTimer) clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => {
-        toast.classList.add('hidden');
-      }, 2800);
-    }
-
-    // 초기 렌더링
-    document.addEventListener('DOMContentLoaded', () => {
-      renderRestaurants('all');
-    });
-  </script>
+    </script>
 </body>
 </html>
